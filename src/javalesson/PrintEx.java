@@ -3,92 +3,290 @@ package javalesson;
 import java.util.Calendar;
 import java.util.Scanner;
 
+class Data{
+	int x;
+}
+
 class myInt{
-	int a;//¸â¹öº¯¼ö, ÇÊµå
+	int a;//ë©¤ë²„ë³€ìˆ˜, í•„ë“œ
 	int b;
 	//method1();
 	//method2();
-	public int getA(){ //getter ÇÔ¼ö - ÀúÀåÇÏ°í ÀÖ´Â ¸â¹öº¯¼öÀÇ °ªÀ» ÀĞÀ»¶§ »ç¿ë 
+	public int getA(){ //getter í•¨ìˆ˜ - ì €ì¥í•˜ê³  ìˆëŠ” ë©¤ë²„ë³€ìˆ˜ì˜ ê°’ì„ ì½ì„ë•Œ ì‚¬ìš© 
 		return a;
 	};
-	public void setA(int a){ //setter ÇÔ¼ö - °ªÀ» ¸â¹öº¯¼ö¿¡ ÀúÀåÇÒ¶§ »ç¿ë
+	public void setA(int a){ //setter í•¨ìˆ˜ - ê°’ì„ ë©¤ë²„ë³€ìˆ˜ì— ì €ì¥í• ë•Œ ì‚¬ìš©
 		this.a = a;
 	}
 	
-	public int getB(){ //getter ÇÔ¼ö - ÀúÀåÇÏ°í ÀÖ´Â ¸â¹öº¯¼öÀÇ °ªÀ» ÀĞÀ»¶§ »ç¿ë 
+	public int getB(){ //getter í•¨ìˆ˜ - ì €ì¥í•˜ê³  ìˆëŠ” ë©¤ë²„ë³€ìˆ˜ì˜ ê°’ì„ ì½ì„ë•Œ ì‚¬ìš© 
 		return b;
 	};
-	public void setB(int b){ //setter ÇÔ¼ö - °ªÀ» ¸â¹öº¯¼ö¿¡ ÀúÀåÇÒ¶§ »ç¿ë
+	public void setB(int b){ //setter í•¨ìˆ˜ - ê°’ì„ ë©¤ë²„ë³€ìˆ˜ì— ì €ì¥í• ë•Œ ì‚¬ìš©
 		this.b = b;
 	}
 	
 }
 public class PrintEx {
 	public static void main(String[] args) {
-		System.out.println("== main ½ÃÀÛ ==");
+		System.out.println("== main ì‹œì‘ ==");
 		// TODO Auto-generated method stub
 
 		// print1();//
 		// print2();//
-		// print3();//¼­½Ä
+		// print3();//ì„œì‹
 
 		/*
-		 * \n \t \b µÚ·Î ÇÑÄ­ ÀÌµ¿ \r ÁÙÀÇ ¸Ç ¾ÕÀ¸·Î ÀÌµ¿ \\ '\'¸¦ Ãâ·Â \' '''¸¦ Ãâ·Â \"  '"'¸¦ Ãâ·Â
+		 * \n \t \b ë’¤ë¡œ í•œì¹¸ ì´ë™ \r ì¤„ì˜ ë§¨ ì•ìœ¼ë¡œ ì´ë™ \\ '\'ë¥¼ ì¶œë ¥ \' '''ë¥¼ ì¶œë ¥ \"  '"'ë¥¼ ì¶œë ¥
 		 */
-		// print4();//¹®Àå¼­½Ä
-		// variable1();//º¯¼ö
-		// datatype1();//µ¥ÀÌÅÍÇü½Ä
+		// print4();//ë¬¸ì¥ì„œì‹
+		// variable1();//ë³€ìˆ˜
+		// datatype1();//ë°ì´í„°í˜•ì‹
 		// datatype2();
-		// ascii();//ascii Ãâ·Â
+		// ascii();//ascii ì¶œë ¥
 		// bool();//boolean
 		// string();//String
-		// input();//ÄÜ¼ÖÀÔ·Â¹Ş±â
-		// operator1();//»ê¼ú°è»ê
-		// operator2();//°ü°è¿¬»ê
-		// °ü°è¿¬»êÀÚ: ==, !=, >, <, >=, <=
-		// operator3();//++, --, ¿¬»êÀÚ ¿ì¼±¼øÀ§
-		// ÈÄÄ¡Áõ°¡¿¬»êÀÚ: a++ a°ªÀ» »ç¿ëÇÑ ÈÄ¿¡ 1Áõ°¡ ¾÷µ¥ÀÌÆ®
-		// ÀüÄ¡Áõ°¡¿¬»êÀÚ: --a a°ªÀ» 1Áõ°¡ ¾÷µ¥ÀÌÆ® ÇÑ ÈÄ¿¡ a°ªÀ» »ç¿ë
-		// °ö¼Àµ¡¼À³ª´°¼À»¬¼À-°è»ê±â
-		// for01();//±¸±¸´Ü °è»ê
-		// operator4();//³í¸®¿¬»êÀÚ - AND &&, OR ||, NOT !
-		// ³í¸®¿¬»êÀÚ: &&, ||, !
-		// operator5();//ºñÆ®¿¬»êÀÚ - AND &, OR |, EXOR ^
-		// ºñÆ®¿¬»êÀÚ: &, |, ^, ~, <<, >>
-		// operator6_form();//¿¬»êÀÚ ¼­½Ä
+		// input();//ì½˜ì†”ì…ë ¥ë°›ê¸°
+		// operator1();//ì‚°ìˆ ê³„ì‚°
+		// operator2();//ê´€ê³„ì—°ì‚°
+		// ê´€ê³„ì—°ì‚°ì: ==, !=, >, <, >=, <=
+		// operator3();//++, --, ì—°ì‚°ì ìš°ì„ ìˆœìœ„
+		// í›„ì¹˜ì¦ê°€ì—°ì‚°ì: a++ aê°’ì„ ì‚¬ìš©í•œ í›„ì— 1ì¦ê°€ ì—…ë°ì´íŠ¸
+		// ì „ì¹˜ì¦ê°€ì—°ì‚°ì: --a aê°’ì„ 1ì¦ê°€ ì—…ë°ì´íŠ¸ í•œ í›„ì— aê°’ì„ ì‚¬ìš©
+		// ê³±ì…ˆë§ì…ˆë‚˜ëˆ—ì…ˆëº„ì…ˆ-ê³„ì‚°ê¸°
+		// for01();//êµ¬êµ¬ë‹¨ ê³„ì‚°
+		// operator4();//ë…¼ë¦¬ì—°ì‚°ì - AND &&, OR ||, NOT !
+		// ë…¼ë¦¬ì—°ì‚°ì: &&, ||, !
+		// operator5();//ë¹„íŠ¸ì—°ì‚°ì - AND &, OR |, EXOR ^
+		// ë¹„íŠ¸ì—°ì‚°ì: &, |, ^, ~, <<, >>
+		// operator6_form();//ì—°ì‚°ì ì„œì‹
 		// datetime();
-		// control_3();//3Ç×¿¬»êÀÚ(»ïÇ×¿¬»êÀÚ)
-		// gugudanSum();//µÎ°³ÀÇ ÀÔ·ÂÀ» ¹Ş¾Æ¼­ ½ÃÀÛ, ³¡ÀÇ ¹üÀ§¿¡¼­ ±¸±¸´ÜÀ» °è»ê
+		// control_3();//3í•­ì—°ì‚°ì(ì‚¼í•­ì—°ì‚°ì)
+		// gugudanSum();//ë‘ê°œì˜ ì…ë ¥ì„ ë°›ì•„ì„œ ì‹œì‘, ëì˜ ë²”ìœ„ì—ì„œ êµ¬êµ¬ë‹¨ì„ ê³„ì‚°
 
-		// whileEx();//while Á¦¾î¹®, ¸Ş´º¼±ÅÃ ÇÔ¼öµ¿ÀÛ
+		// whileEx();//while ì œì–´ë¬¸, ë©”ë‰´ì„ íƒ í•¨ìˆ˜ë™ì‘
 
 //		int ret = 0;
-//		ret = dowhileEx();// ±âÃÊ¹®¹ı¿ë¿¹Á¦ do~while
-//		System.out.println("dowhileExÀÇ Á¾·á ÄÚµå: " + ret);
+//		ret = dowhileEx();// ê¸°ì´ˆë¬¸ë²•ìš©ì˜ˆì œ do~while
+//		System.out.println("dowhileExì˜ ì¢…ë£Œ ì½”ë“œ: " + ret);
 //		System.out.println("== main  ==");
 		
 		//control_basic();
 		
 		//array_1();
 		//calc();
-		//array_ex5_23();//¿¹Á¦5.23
+		//array_ex5_23();//ì˜ˆì œ5.23
 		
-		//string_f1();//¹®ÀÚ¿­ Ã³¸®- ¹®ÀÚ¿­±æÀÌ, ¹®ÀÚ¹Ù²Ù±â, length(), charAt()   
-		//string_f2();//¹®ÀÚ¿­ Ã³¸®- ¹®ÀÚ¿­À§Ä¡Ã£±â-indexOf(), lastIndexOf()
-		//string_f3(); //¹®ÀÚ¿­Ã³¸®- ¹®ÀÚ¿­À» ¹Ù²Ù±â replace()
-		//string_f4(); //¹®ÀÚ¿­Ã³¸®- ¹®ÀÚ¿­À» Àß¶ó³»±â substring()
-		//string_f5(); //¹®ÀÚ¿­Ã³¸®- ¹®ÀÚ¿­À» ºĞÇÒ split()
+		//string_f1();//ë¬¸ìì—´ ì²˜ë¦¬- ë¬¸ìì—´ê¸¸ì´, ë¬¸ìë°”ê¾¸ê¸°, length(), charAt()   
+		//string_f2();//ë¬¸ìì—´ ì²˜ë¦¬- ë¬¸ìì—´ìœ„ì¹˜ì°¾ê¸°-indexOf(), lastIndexOf()
+		//string_f3(); //ë¬¸ìì—´ì²˜ë¦¬- ë¬¸ìì—´ì„ ë°”ê¾¸ê¸° replace()
+		//string_f4(); //ë¬¸ìì—´ì²˜ë¦¬- ë¬¸ìì—´ì„ ì˜ë¼ë‚´ê¸° substring()
+		//string_f5(); //ë¬¸ìì—´ì²˜ë¦¬- ë¬¸ìì—´ì„ ë¶„í•  split()
 		//string_f6();//toUpperCase(), toLowerCase(), trim()
-		//string_ex();//¹®ÀÚ¿­Ã³¸®¿¹Á¦
-		//string_f7();//¹®ÀÚºñ±³ compareTo(), ¹®ÀÚ¿­Æ÷ÇÔÈ®ÀÎ contains(), ¹®ÀÚ¿­°°ÀºÁöÈ®ÀÎ equals()
-		//string_ex2();//ÀÚÆÇ±â
+		//string_ex();//ë¬¸ìì—´ì²˜ë¦¬ì˜ˆì œ
+		//string_f7();//ë¬¸ìë¹„êµ compareTo(), ë¬¸ìì—´í¬í•¨í™•ì¸ contains(), ë¬¸ìì—´ê°™ì€ì§€í™•ì¸ equals()
+		//string_ex2();//ìíŒê¸°
 		
 		//method_ex1();//call by value
 		//method_ex2();//call by reference  --> get(), set()
-		method_ex3_swap();
+		//method_ex3_swap();
+		parameter_value();//ê°’ì„ ì „ë‹¬, reference by value
+		parameter_address();//ì£¼ì†Œ ì „ë‹¬, reference by address
+		parameter_array();
+		//class_ex();//í´ë˜ìŠ¤ ì˜ˆ -ìë™ì°¨í´ë˜ìŠ¤
+		//class_TvTest();//í´ë˜ìŠ¤ ì˜ˆ -TVí´ë˜ìŠ¤
+
+		//callStack(); //staticë©”ì†Œë“œì˜ í˜¸ì¶œê³¼ stackë©”ëª¨ë¦¬ë²ˆì§€í• ë‹¹
+		
+		//classExtends();//í´ë˜ìŠ¤ìƒì† ì˜ˆì œ
+		//interface_ex();//ì¸í„°í˜ì´ìŠ¤ ì˜ˆì œ
+		
+	}
+	static void parameter_value() {
+		System.out.println("parameter_value()");
+		//ê¸°ë³¸í˜• ë°ì´í„° íƒ€ì… : int, char, float, double, boolean, byte
+		Data d = new Data();
+		d.x = 10;
+		System.out.println("ì´ˆê¸°ê°’: " + d.x);
+		change(d.x);//ì „ë‹¬í•˜ëŠ” ë§¤ê°œë³€ìˆ˜ëŠ” ê°’? ì£¼ì†Œ?
+		System.out.println("parameter_value x= "+d.x);
+	}
+	
+	static void parameter_address() {
+		//ê¸°ë³¸í˜• ë°ì´í„° íƒ€ì… ì™¸ : í´ë˜ìŠ¤, userê°€ë§Œë“  ë°ì´í„°íƒ€ì…
+		System.out.println("parameter_address()");
+		Data d = new Data();
+		d.x = 10;
+		System.out.println("ì´ˆê¸°ê°’: " + d.x);
+		change(d);//ì „ë‹¬í•˜ëŠ” ë§¤ê°œë³€ìˆ˜ëŠ” ê°’? ì£¼ì†Œ?
+		System.out.println("parameter_address x= "+d.x);		
+	}
+	static void parameter_array() {
+		//ê¸°ë³¸í˜• ë°ì´í„° íƒ€ì… ì™¸ : í´ë˜ìŠ¤, userê°€ë§Œë“  ë°ì´í„°íƒ€ì…
+		System.out.println("parameter_array()");
+		int [] arr =  new int[10]; ;
+		arr[0] = 10;
+		System.out.println("ì´ˆê¸°ê°’: " + arr[0]);
+		change(arr);//ì „ë‹¬í•˜ëŠ” ë§¤ê°œë³€ìˆ˜ëŠ” ê°’? ì£¼ì†Œ?
+		System.out.println("parameter_array x= "+arr[0]);		
+	}
+	static void change(int x) { //ê¸°ë³¸í˜• ë§¤ê°œë³€ìˆ˜(ê¸°ë³¸í˜• ë°ì´í„°íƒ€ì… ë§¤ê°œë³€ìˆ˜)
+		System.out.println("change(int x)");
+		x=9000;
+		System.out.println("change: x= "+x);
+	}
+	static void change(Data d) { //ê¸°ë³¸í˜• ë§¤ê°œë³€ìˆ˜(ê¸°ë³¸í˜• ë°ì´í„°íƒ€ì… ë§¤ê°œë³€ìˆ˜)
+		System.out.println("change(Data x)");
+		d.x=1000;
+		System.out.println("change: x= "+d.x);
+	}
+	static void change(int x[]) { //ê¸°ë³¸í˜• ë§¤ê°œë³€ìˆ˜(ê¸°ë³¸í˜• ë°ì´í„°íƒ€ì… ë§¤ê°œë³€ìˆ˜)
+		System.out.println("change(int x[]), x[] size: "+ x.length);
+		
+		x[0]=1000;
+		System.out.println("change: x= "+x[0]);
+	}
+
+	static void interface_ex() {
+		String computerOsType = Computer.COMPUTER_OS_TYPE;
+		System.out.println("* computer os type: " + computerOsType);
+		
+		Notebook note1 = new Notebook((float) 1.6);
+		System.out.println("* note1 ");
+		note1.work();
+		note1.purpose();
+		System.out.println("note1ì‚¬ì–‘: " + note1.toString());
+		
+		System.out.println("* desk1 ");
+		Desktop desk1 = new Desktop();
+		desk1.work();
+		desk1.purpose();
+		
+	}
+	static void classExtends() {
+		Sedan sedan1 = new Sedan();//sedan í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤
+		Truck truck1 = new Truck();//truck í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤
+		
+//		sedan1.seatNum = 5; //ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜
+//		truck1.capacity =50;//ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜
+		
+
+		sedan1.setSeatNum(5);//5ì¸ìŠ¹ ì¢Œì„
+		sedan1.setSpeed(230);
+		sedan1.setColor("red");
+		
+		truck1.setCapacity(50);//50T ë¬´ê²Œ ì ì¬í•¨
+		truck1.setSpeed(10);
+		truck1.setColor("white");
+		
+		System.out.println("* íŒë§¤ ìŠ¹ìš©ì°¨íŠ¹ì§•: ");
+		System.out.printf("ì†ë„:%d km, ìƒ‰ìƒ: %s, ì¢Œì„ìˆ˜: %d"
+				,sedan1.getSpeed(),sedan1.getColor(),sedan1.getSeatNum());
+		System.out.println();
+		System.out.println();
+		System.out.println("* íŒë§¤ íŠ¸ëŸ­íŠ¹ì§•: ");
+		System.out.printf("ì†ë„:%d km, ìƒ‰ìƒ: %s, ì ì¬ëŸ‰: %d T"
+				,truck1.getSpeed(), truck1.getColor(), truck1.getCapacity());
+		
+		System.out.println("Sedan í´ë˜ìŠ¤ íƒ€ì…=>" + Sedan.CAR_TYPE);
+		System.out.println("Truck í´ë˜ìŠ¤ íƒ€ì…=>" + Truck.CAR_TYPE);
+		int d=2;
+		for(int i=0;i<10;i++) {
+			d = d*(i+1);
+			truck1.upSpeed(d);	
+			System.out.printf("truck1 ì†ë„:%d km\n", truck1.getSpeed()); 
+		}
+		
+	}
+	
+	static void Method2() {
+		System.out.println("Method2()-start");
+		//ì²˜ë¦¬
+		System.out.println("Method2()-end");
+	}
+	static void Method1() {
+		System.out.println("Method1()-start");
+		Method2();
+		System.out.println("Method1()-end");
+	}
+	static void callStack() {
+		System.out.println("callStack()-start");
+		Method1();
+		System.out.println("callStack()-end");	
+	}
+	static void class_TvTest() {
+		Tv t1 = new Tv(); //í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+		t1.ch = 11;//MBC
+		System.out.println("1) t1ìƒì„±");
+		System.out.println("í˜„ì¬ì±„ë„t1.ch: "+ t1.ch);
+		System.out.println("í˜„ì¬ì±„ë„t1.color: "+ t1.color);
+		System.out.println("í˜„ì¬ì±„ë„t1.size: "+ t1.size);
+		System.out.println("í˜„ì¬ì±„ë„t1.powerOn: "+ t1.powerOn);
+		System.out.println("í˜„ì¬ì±„ë„t1 ì†ì„±: "+ t1.toString());
+		
+		
+		String color="green";
+		float size= (float) 15.2;
+		Tv t2 = new Tv(color, size); //í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+		
+		System.out.println("2) t2ìƒì„±ì íŒŒë¼ë¯¸í„° ì‚¬ìš©");
+		System.out.println("í˜„ì¬ì±„ë„t2.ch: "+ t2.ch);
+		System.out.println("í˜„ì¬ì±„ë„t2.color: "+ t2.color);
+		System.out.println("í˜„ì¬ì±„ë„t2.size: "+ t2.size);
+		System.out.println("í˜„ì¬ì±„ë„t2.powerOn: "+ t2.powerOn);
+		System.out.println("í˜„ì¬ì±„ë„t2 ì†ì„±: "+ t2.toString());
+		
+		t2=t1;//ì£¼ì†Œë¥¼ ë„˜ê²¨ì¤¬ë‹¤
+		System.out.println("3) ts=t1 ì£¼ì†Œ ì „ë‹¬ ");		
+		t1.chDown();
+		System.out.println("í˜„ì¬ì±„ë„t2.ch: "+ t2.ch);
+		System.out.println("í˜„ì¬ì±„ë„t2.color: "+ t2.color);
+		System.out.println("í˜„ì¬ì±„ë„t2.size: "+ t2.size);
+		System.out.println("í˜„ì¬ì±„ë„t2.powerOn: "+ t2.powerOn);
+		
+	}
+	static void class_ex() {
+//		Car car1 = new Car();
+//		System.out.println("ë‚´ì°¨: "+ car1.count);
+//		
+//		Car car2 = new Car();
+//		System.out.println("ë‚´ì°¨: "+ car2.count);
+//		
+//		Car car3 = new Car();
+//		System.out.println("ë‚´ì°¨: "+ car3.count);
+		
+		int n=0;
+		
+		n= Car.getCount();//í´ë˜ìŠ¤ë©”ì†Œë“œ í˜¸ì¶œ
+		System.out.println("í´ë˜ìŠ¤ ë‚´ì°¨: " + n);
+		
+		Car car4 = new Car();
+		n = car4.getCount(); // ì¸ìŠ¤í„´ìŠ¤ ë©”ì†Œë“œ
+		System.out.println("ì¸ìŠ¤í„´ìŠ¤ ë‚´ì°¨: " + n);
+
+		car4.setColor("red");
+		car4.setSpeed(150);
+		car4.setWheel(4);
+		
+	    Car car5 = new Car();
+	    car5.setColor("black");
+		car5.setSpeed(220);
+		car5.setWheel(8);
+		
+		System.out.println("car4 ë‚´ì°¨: " + n);
+		System.out.println("car4 color: " + car4.getColor());
+		System.out.println("car4 speed: " + car4.getSpeed());
+		System.out.println("car4 wheel: " + car4.getWheel());
+		
+		
+		System.out.println("car5 ë‚´ì°¨: " + n);
+		System.out.println("car5 color: " + car5.getColor());
+		System.out.println("car5 speed: " + car5.getSpeed());
+		System.out.println("car5 wheel: " + car5.getWheel());
+			
 	}
 	public static void method_ex3_swap() {
-		myInt m = new myInt();//Å¬·¡½º ÀÎ½ºÅÏ½º »ı¼º
+		myInt m = new myInt();//í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		m.setA(10);
 		m.setB(100);
 		System.out.println("m.getA():"+ m.getA() );
@@ -118,15 +316,15 @@ public class PrintEx {
 		m.a = m.b;
 		m.b=t;
 	}
-	static void func2(myInt m) { //Å¬·¡½º °´Ã¼¸¦ ÆÄ¶ó¹ÌÅÍ(¸Å°³º¯¼ö) Àü´Ş)
+	static void func2(myInt m) { //í´ë˜ìŠ¤ ê°ì²´ë¥¼ íŒŒë¼ë¯¸í„°(ë§¤ê°œë³€ìˆ˜) ì „ë‹¬)
 		m.a = m.a + 10;
 		
 		System.out.println("func2: "+ m.a);
 	}
 	public static void method_ex2() { //call by reference
-		myInt m = new myInt();//Å¬·¡½º ÀÎ½ºÅÏ½º »ı¼º
+		myInt m = new myInt();//í´ë˜ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		
-		m.a=10; //a=10 Å¬·¡½ºÀÇ º¯¼öa ÃÊ±âÈ­
+		m.a=10; //a=10 í´ë˜ìŠ¤ì˜ ë³€ìˆ˜a ì´ˆê¸°í™”
 		System.out.println("m.a: "+ m.a);
 		func2(m);
 		
@@ -147,19 +345,19 @@ public class PrintEx {
 		int a=10;
 		int b=20;
 		
-		System.out.printf("¹®Á¦¼ö:%d, Á¤´ä¼ö: %d", a, b);
+		System.out.printf("ë¬¸ì œìˆ˜:%d, ì •ë‹µìˆ˜: %d", a, b);
 		System.out.printf("a/b = %f", (float)a/b);
-		//¸ò        a/b
-		//³ª¸ÓÁö   a%d
+		//ëª«        a/b
+		//ë‚˜ë¨¸ì§€   a%d
 	}
 	
 	public static void array_ex5_23() {
 		String [][] words= {
-			{"chair","ÀÇÀÚ"}
-			,{"computer","ÄÄÇ»ÅÍ"}
-			,{"integer","Á¤¼ö"}
-			,{"array","¹è¿­"}
-			,{"string","¹®ÀÚ¿­"}
+			{"chair","ì˜ì"}
+			,{"computer","ì»´í“¨í„°"}
+			,{"integer","ì •ìˆ˜"}
+			,{"array","ë°°ì—´"}
+			,{"string","ë¬¸ìì—´"}
 		};
 			
 		Scanner scan = new Scanner(System.in);
@@ -167,28 +365,28 @@ public class PrintEx {
 		int n=0;
 		int t=words.length;
 		
-		System.out.println("´Ü¾îÀÇ ¶æÀ» ¸ÂÃçº¸¼¼¿ä.");
+		System.out.println("ë‹¨ì–´ì˜ ëœ»ì„ ë§ì¶°ë³´ì„¸ìš”.");
 		for(int i=0;i<t;i++) {
-			//´Ü¾î¿¡ ÀÖ´Â Ç×¸ñÀ» ÀÔ·Â¹Ş°í ¸Â´ÂÁö ´äº¯....
+			//ë‹¨ì–´ì— ìˆëŠ” í•­ëª©ì„ ì…ë ¥ë°›ê³  ë§ëŠ”ì§€ ë‹µë³€....
 			System.out.printf("[Q%d] %s ? ", i+1, words[i][1] );
 			String ans = scan.nextLine();
 			
 			if(ans.equals(words[i][0])) {
-				System.out.println("Á¤´äÀÔ´Ï´Ù");
+				System.out.println("ì •ë‹µì…ë‹ˆë‹¤");
 				n++;
 			}else{
-				System.out.println("¿À´äÀÔ´Ï´Ù - Á¤´äÀº " + words[i][0]);
+				System.out.println("ì˜¤ë‹µì…ë‹ˆë‹¤ - ì •ë‹µì€ " + words[i][0]);
 			};
 		}
 		if(t==0) {
-			System.out.println("¿À·ù: 0À¸·Î ³ª´©°í ÀÖ½À´Ï´Ù");
+			System.out.println("ì˜¤ë¥˜: 0ìœ¼ë¡œ ë‚˜ëˆ„ê³  ìˆìŠµë‹ˆë‹¤");
 			return;
 		}
 		
 		float f =(float)n/t; // 123.123123123
 		
-		System.out.printf("¹®Á¦¼ö:%d, Á¤´ä¼ö: %d", t, n); 
-		System.out.printf("1)Á¤´äÀ²: %3.2f", f*100);
+		System.out.printf("ë¬¸ì œìˆ˜:%d, ì •ë‹µìˆ˜: %d", t, n); 
+		System.out.printf("1)ì •ë‹µìœ¨: %3.2f", f*100);
 		
 	}
 	
@@ -201,7 +399,7 @@ public class PrintEx {
 		Scanner scan = new Scanner(System.in);
 		String s, m;
 		
-		System.out.println("µ·À» ÀÔ·Â : ");
+		System.out.println("ëˆì„ ì…ë ¥ : ");
 		m = scan.nextLine();
 		try {
 			Thread.sleep(1000);
@@ -209,13 +407,13 @@ public class PrintEx {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("==ÀÚÆÇ±â ¸Ş´º= ");
+		System.out.println("==ìíŒê¸° ë©”ë‰´= ");
 		m = scan.nextLine();
-		System.out.println("1. ¹ĞÅ©Ä¿ÇÇ,  500¿ø");
-		System.out.println("2. ¾Æ¸Ş¸®Ä«³ë, 1000¿ø");
-		System.out.println("3. Ä«ÇªÄ¡³ë, 1500¿ø");
+		System.out.println("1. ë°€í¬ì»¤í”¼,  500ì›");
+		System.out.println("2. ì•„ë©”ë¦¬ì¹´ë…¸, 1000ì›");
+		System.out.println("3. ì¹´í‘¸ì¹˜ë…¸, 1500ì›");
 		
-		System.out.println("ÀÚÆÇ±â ¸Ş´º¸¦ ¼±ÅÃ: ");
+		System.out.println("ìíŒê¸° ë©”ë‰´ë¥¼ ì„ íƒ: ");
 		s = scan.nextLine();
 	
 		if(s.equals(SELECT_MILK)) {
@@ -239,40 +437,40 @@ public class PrintEx {
 			break;
 		}
 		
-		System.out.println("¹°À» ³»¸°´Ù ");
-		System.out.println("Ä¿ÇÇ Ãâ·Â ¿Ï·á");
-		System.out.println("ÀÜµ·¹İÈ¯ ");
+		System.out.println("ë¬¼ì„ ë‚´ë¦°ë‹¤ ");
+		System.out.println("ì»¤í”¼ ì¶œë ¥ ì™„ë£Œ");
+		System.out.println("ì”ëˆë°˜í™˜ ");
 		
-		System.out.println("==Ä¿ÇÇ°¡ ³ª¿Ô½À´Ï´Ù= ");
+		System.out.println("==ì»¤í”¼ê°€ ë‚˜ì™”ìŠµë‹ˆë‹¤= ");
 	}
 	public static void string_f7() {
 		Scanner scan = new Scanner(System.in);
 		String s1, s2, s3;
 		
-		System.out.println("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
 		s1 = scan.nextLine();
-		System.out.println("ºñ±³ÇÒ ¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ë¹„êµí•  ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
 		s2 = scan.nextLine();
 	
 		System.out.println();
 		System.out.println("s1:["+s1+"]");
 		System.out.println("s2:["+s2+"]");
-		System.out.println("1) ¹®ÀÚ¿­ ºñ±³: "+s1.compareTo(s2));
+		System.out.println("1) ë¬¸ìì—´ ë¹„êµ: "+s1.compareTo(s2));
 		
 		System.out.println();
-		System.out.println("2) ¹®ÀÚ¿­ÀÌ°°ÀºÁöºñ±³: " + s1.equals(s2));
+		System.out.println("2) ë¬¸ìì—´ì´ê°™ì€ì§€ë¹„êµ: " + s1.equals(s2));
 		
 		System.out.println();
-		System.out.println("°Ë»öÇÒ ´Ü¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ê²€ìƒ‰í•  ë‹¨ì–´ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 		s3 = scan.nextLine();
-		System.out.println("3) ´Ü¾î Æ÷ÇÔÈ®ÀÎ: "+s1.contains(s3));
+		System.out.println("3) ë‹¨ì–´ í¬í•¨í™•ì¸: "+s1.contains(s3));
 		
 	}
 	public static void string_ex() {
 		Scanner scan = new Scanner(System.in);
 		String s;
 		
-		System.out.println("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
 		s = scan.nextLine();
 	
 		String r = "";
@@ -281,21 +479,21 @@ public class PrintEx {
 			if(s.charAt(i)==' ') {
 				r += s.substring(i, i+1);
 			}
-			System.out.println("ÀÔ·Â¹®ÀÚ¿­:["+s+"]");
-			System.out.println("°ø¹éÁ¦°Å ¹®ÀÚ¿­:["+r+"]");
+			System.out.println("ì…ë ¥ë¬¸ìì—´:["+s+"]");
+			System.out.println("ê³µë°±ì œê±° ë¬¸ìì—´:["+r+"]");
 		}
 	}
 	public static void string_f6() {
 		Scanner scan = new Scanner(System.in);
 		String s;
 		
-		System.out.println("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
 		s = scan.nextLine();
 		System.out.println();
-		System.out.println("ÀÔ·ÂµÈ ¹®ÀÚ¿­:["+s +"]");
-		System.out.println("1) ´ë¹®ÀÚº¯È¯: "+ s.toUpperCase());
-		System.out.println("2) ¼Ò¹®ÀÚº¯È¯: "+s.toLowerCase());
-		System.out.println("3) °ø¹éÁ¦°Å(trim):["+s.trim()+"]");
+		System.out.println("ì…ë ¥ëœ ë¬¸ìì—´:["+s +"]");
+		System.out.println("1) ëŒ€ë¬¸ìë³€í™˜: "+ s.toUpperCase());
+		System.out.println("2) ì†Œë¬¸ìë³€í™˜: "+s.toLowerCase());
+		System.out.println("3) ê³µë°±ì œê±°(trim):["+s.trim()+"]");
 		
 		
 	}
@@ -303,7 +501,7 @@ public class PrintEx {
 		Scanner scan = new Scanner(System.in);
 		String s;
 		
-		System.out.println("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä(ÄŞ¸¶´Â ºĞÇÒµË´Ï´Ù): ");
+		System.out.println("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”(ì½¤ë§ˆëŠ” ë¶„í• ë©ë‹ˆë‹¤): ");
 		s = scan.nextLine();
 		String s2[] = s.split(",");
 		System.out.println("s1:"+s2[0]);
@@ -313,37 +511,37 @@ public class PrintEx {
 		Scanner scan = new Scanner(System.in);
 		String s;
 		
-		System.out.println("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä(ÄŞ¸¶´Â ºĞÇÒµË´Ï´Ù): ");
+		System.out.println("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”(ì½¤ë§ˆëŠ” ë¶„í• ë©ë‹ˆë‹¤): ");
 		s = scan.nextLine();
 		
-		System.out.println("Àß¶ó³¾ ¹®ÀÚ¿­ À§Ä¡¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
-		System.out.println("½ÃÀÛ:");
+		System.out.println("ì˜ë¼ë‚¼ ë¬¸ìì—´ ìœ„ì¹˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+		System.out.println("ì‹œì‘:");
 		int n1 = scan.nextInt();
-		System.out.println("³¡:");
+		System.out.println("ë:");
 		int n2 = scan.nextInt();
 		
-		System.out.println("Àß¶ó³½ ¹®ÀÚ¿­: "+ s.substring(n1,n2));
+		System.out.println("ì˜ë¼ë‚¸ ë¬¸ìì—´: "+ s.substring(n1,n2));
 		
 	}
 	public static void string_f3() {
 		Scanner scan = new Scanner(System.in);
 		String s;
 		
-		System.out.println("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
 		s = scan.nextLine();
 		
-		//¹®ÀÚ¿­À§Ä¡Ã£±â-indexOf(), lastIndexOf()
-		System.out.print("\n°Ë»öÇÒ ´Ü¾î ÀÔ·Â: ");
+		//ë¬¸ìì—´ìœ„ì¹˜ì°¾ê¸°-indexOf(), lastIndexOf()
+		System.out.print("\nê²€ìƒ‰í•  ë‹¨ì–´ ì…ë ¥: ");
 		String f = scan.nextLine();
 		System.out.println(f);
 		
-		System.out.print("\n´ëÃ¼ÇÒ ´Ü¾î¸¦ ÀÔ·Â: ");
+		System.out.print("\nëŒ€ì²´í•  ë‹¨ì–´ë¥¼ ì…ë ¥: ");
 		String r = scan.nextLine();
 		System.out.println(r);
 		
 		String rep = s.replace(f, r);
 		System.out.println();
-		System.out.print("´Ü¾î¹Ù²Û ¹®ÀÚ¿­:[" +rep +"]");
+		System.out.print("ë‹¨ì–´ë°”ê¾¼ ë¬¸ìì—´:[" +rep +"]");
 		
 		
 			
@@ -352,19 +550,19 @@ public class PrintEx {
 		Scanner scan = new Scanner(System.in);
 		String s;
 		
-		System.out.println("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
 		s = scan.nextLine();
 		
-		//¹®ÀÚ¿­À§Ä¡Ã£±â-indexOf(), lastIndexOf()
-		System.out.print("\n°Ë»öÇÒ ¹®ÀÚ¿­À» ÀÔ·Â: ");
+		//ë¬¸ìì—´ìœ„ì¹˜ì°¾ê¸°-indexOf(), lastIndexOf()
+		System.out.print("\nê²€ìƒ‰í•  ë¬¸ìì—´ì„ ì…ë ¥: ");
 		String f = scan.nextLine();
 		System.out.println(f);
 		
 		System.out.println();
-		System.out.print("ÀÔ·ÂµÈ ¹®ÀÚ¿­:[" +s +"]");
+		System.out.print("ì…ë ¥ëœ ë¬¸ìì—´:[" +s +"]");
 		
-		System.out.println("\nÃ³À½À§Ä¡:"+s.indexOf(f));//--°Ë»ö¹®ÀÚ¿­Ã³À½À§Ä¡Ãâ·Â
-		System.out.println("\n¸¶Áö¸·À§Ä¡:"+s.lastIndexOf(f));//--°Ë»ö¹®ÀÚ¿­¸¶Áö¸·À§Ä¡Ãâ·Â
+		System.out.println("\nì²˜ìŒìœ„ì¹˜:"+s.indexOf(f));//--ê²€ìƒ‰ë¬¸ìì—´ì²˜ìŒìœ„ì¹˜ì¶œë ¥
+		System.out.println("\në§ˆì§€ë§‰ìœ„ì¹˜:"+s.lastIndexOf(f));//--ê²€ìƒ‰ë¬¸ìì—´ë§ˆì§€ë§‰ìœ„ì¹˜ì¶œë ¥
 
 	}
 	public static void string_f1() {
@@ -373,22 +571,22 @@ public class PrintEx {
 		int n = 0;
 		n =  s.length();
 		
-		System.out.println("¹®ÀÚ¿­ÀÇ ±æÀÌ:"+n);
+		System.out.println("ë¬¸ìì—´ì˜ ê¸¸ì´:"+n);
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
 		s = scan.nextLine();
-		System.out.println("ÀÔ·ÂÇÑ ¹®ÀÚ¿­ÀÇ ±æÀÌ:"+s.length());
+		System.out.println("ì…ë ¥í•œ ë¬¸ìì—´ì˜ ê¸¸ì´:"+s.length());
 		
 	
-		//¹®ÀÚ¿­È®ÀÎ - startsWidth(), endsWidth()
+		//ë¬¸ìì—´í™•ì¸ - startsWidth(), endsWidth()
 		if(!s.startsWith("(")) {
 			System.out.printf("(");
 		}
 		
-		//¹®ÀÚ¿­À§Ä¡ - charAt()
-		//Ãâ·ÂÇÒ¶§ ¹®ÀÚ¸¦ ¹Ù²ãÁÖ±â
+		//ë¬¸ìì—´ìœ„ì¹˜ - charAt()
+		//ì¶œë ¥í• ë•Œ ë¬¸ìë¥¼ ë°”ê¿”ì£¼ê¸°
 		//abcdefghijklmnopqrstuvwxyz
 		//0123456789
 		for(int i=0;i<s.length();i++) {
@@ -406,7 +604,7 @@ public class PrintEx {
 	}
 	
 	public static void array_1() {
-		// º¯¼ö¸¦ ¼±¾ğÇÏ¸é °¹¼ö°¡ ¸¹À»°æ¿ì ¿À·ù¹ß»ıÇÒ ¼öµµ ÀÖ°í ½Ã°£µµ ¸¹ÀÌ °É¸°´Ù.
+		// ë³€ìˆ˜ë¥¼ ì„ ì–¸í•˜ë©´ ê°¯ìˆ˜ê°€ ë§ì„ê²½ìš° ì˜¤ë¥˜ë°œìƒí•  ìˆ˜ë„ ìˆê³  ì‹œê°„ë„ ë§ì´ ê±¸ë¦°ë‹¤.
 		int a1,a2,a3,a4,a5,a6,a7,a8,a9,a10;
 		a1=1;
 		a2=a1*2;
@@ -424,15 +622,15 @@ public class PrintEx {
 
 		
 		//-----------------------------------
-		// º¯¼ö¸¦ ¹è¿­·Î ¹Ù²Ù°í, for ±¸¹®À» »ç¿ëÇØ¼­ ¹è¿­À» ÀÔ·Â, Ãâ·ÂÇÒ ¼ö ÀÖ´Ù. 
-		//¹è¿­(array) ¿¬¼ÓµÈµ¥ÀÌÅÍÅ¸ÀÔÀ» ½±°Ô ¾²ÀÚ, ¿¬¼ÓµÈ °ÍÀ» ¹è¿­ÀÌ¶ó°í ÇÏÀÚ
+		// ë³€ìˆ˜ë¥¼ ë°°ì—´ë¡œ ë°”ê¾¸ê³ , for êµ¬ë¬¸ì„ ì‚¬ìš©í•´ì„œ ë°°ì—´ì„ ì…ë ¥, ì¶œë ¥í•  ìˆ˜ ìˆë‹¤. 
+		//ë°°ì—´(array) ì—°ì†ëœë°ì´í„°íƒ€ì…ì„ ì‰½ê²Œ ì“°ì, ì—°ì†ëœ ê²ƒì„ ë°°ì—´ì´ë¼ê³  í•˜ì
 		int [] a = new int[10];
 		int c[];
 		c = new int [10];
 		
 		
-		//int a[10] //c ÇÁ·Î±×·¡¹Ö
-		// °ªÀ» ÀúÀåÇØ³õ´Â´Ù(ÀÔ·Â)
+		//int a[10] //c í”„ë¡œê·¸ë˜ë°
+		// ê°’ì„ ì €ì¥í•´ë†“ëŠ”ë‹¤(ì…ë ¥)
 		for (int i=0;i<10;i++) {
 			if(i==0) {
 				a[i]=1;
@@ -440,7 +638,7 @@ public class PrintEx {
 				a[i]=a[0]*(i+1);
 			}
 		}
-		// °ªÀ» ºÒ·¯¿À±â (Ãâ·Â)
+		// ê°’ì„ ë¶ˆëŸ¬ì˜¤ê¸° (ì¶œë ¥)
 		System.out.println();
 		System.out.print("data: ");
 		for (int i=0;i<10;i++) {
@@ -448,12 +646,12 @@ public class PrintEx {
 		}
 		
 		//-----------------------------------
-		// for ±¸¹®¿¡ ´ëÇÑ ÄÚµå±æÀÌ´Â °°Áö¸¸ ¹è¿­ÀÇ °¹¼ö¸¦ ´Ã·Á¼­ »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+		// for êµ¬ë¬¸ì— ëŒ€í•œ ì½”ë“œê¸¸ì´ëŠ” ê°™ì§€ë§Œ ë°°ì—´ì˜ ê°¯ìˆ˜ë¥¼ ëŠ˜ë ¤ì„œ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤.
 		int n=1000;
 		int b[] = new int[n];
 		
-		//int a[10] //c ÇÁ·Î±×·¡¹Ö
-		// °ªÀ» ÀúÀåÇØ³õ´Â´Ù(ÀÔ·Â)
+		//int a[10] //c í”„ë¡œê·¸ë˜ë°
+		// ê°’ì„ ì €ì¥í•´ë†“ëŠ”ë‹¤(ì…ë ¥)
 		for (int i=0;i<n;i++) {
 			if(i==0) {
 				b[i]=1;
@@ -461,7 +659,7 @@ public class PrintEx {
 				b[i]=b[0]*(i+1);
 			}
 		}
-		// °ªÀ» ºÒ·¯¿À±â (Ãâ·Â)
+		// ê°’ì„ ë¶ˆëŸ¬ì˜¤ê¸° (ì¶œë ¥)
 		System.out.println();
 		System.out.print("data: ");
 		for (int i=0;i<n;i++) {
@@ -474,28 +672,28 @@ public class PrintEx {
 	}
 	
 	public static void control_if() {
-		System.out.println("== if ±¸¹®À» »ç¿ëÇÑ ¿¹Á¦ ½ÇÇà == ");
-		System.out.println("ÇöÀçÀÇ °èÀıÀ» ±¸ÇÕ´Ï´Ù. ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä(1~12): ");
+		System.out.println("== if êµ¬ë¬¸ì„ ì‚¬ìš©í•œ ì˜ˆì œ ì‹¤í–‰ == ");
+		System.out.println("í˜„ì¬ì˜ ê³„ì ˆì„ êµ¬í•©ë‹ˆë‹¤. ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”(1~12): ");
 		
 		Scanner scan = new Scanner(System.in);
 		int a = scan.nextInt();
 		
 		if(3<=a && a<=5) {
-			System.out.println("º½ ÀÔ´Ï´Ù");
+			System.out.println("ë´„ ì…ë‹ˆë‹¤");
 		}else if(6<=a && a<=8){
-			System.out.println("¿©¸§ ÀÔ´Ï´Ù");
+			System.out.println("ì—¬ë¦„ ì…ë‹ˆë‹¤");
 		}else if(9<=a && a<=11) {
-			System.out.println("°¡À» ÀÔ´Ï´Ù");
+			System.out.println("ê°€ì„ ì…ë‹ˆë‹¤");
 		}else if(a==12 || a==1 || a==2) {
-			System.out.println("°Ü¿ï ÀÔ´Ï´Ù");
+			System.out.println("ê²¨ìš¸ ì…ë‹ˆë‹¤");
 		}else {
-			System.out.println("Àß¸øÀÔ·ÂÇß½À´Ï´Ù. 1¿ù~12¿ù »çÀÌ¿¡¼­ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			System.out.println("ì˜ëª»ì…ë ¥í–ˆìŠµë‹ˆë‹¤. 1ì›”~12ì›” ì‚¬ì´ì—ì„œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		}
 	}
 	public static void control_switch() {
-		System.out.println("== switch ±¸¹®À» »ç¿ëÇÑ ¿¹Á¦ ½ÇÇà == ");
-		System.out.println("ÇöÀçÀÇ °èÀıÀ» ±¸ÇÕ´Ï´Ù. ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä(1~12): ");
-		// 345-> º½, 678-> ¿©¸§, 91011->°¡À», 12,1,2->°Ü¿ï
+		System.out.println("== switch êµ¬ë¬¸ì„ ì‚¬ìš©í•œ ì˜ˆì œ ì‹¤í–‰ == ");
+		System.out.println("í˜„ì¬ì˜ ê³„ì ˆì„ êµ¬í•©ë‹ˆë‹¤. ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”(1~12): ");
+		// 345-> ë´„, 678-> ì—¬ë¦„, 91011->ê°€ì„, 12,1,2->ê²¨ìš¸
 		
 		Scanner scan = new Scanner(System.in);
 		int a = scan.nextInt();
@@ -503,37 +701,37 @@ public class PrintEx {
 		case 3:// if(a==3)
 		case 4:// if(a==4)
 		case 5:// if(a==5)
-			System.out.println("º½ ÀÔ´Ï´Ù");
+			System.out.println("ë´„ ì…ë‹ˆë‹¤");
 			break;
 		case 6:// if(a==6)
 		case 7:// if(a==7)
 		case 8:// if(a==8)
-			System.out.println("¿©¸§ ÀÔ´Ï´Ù");
+			System.out.println("ì—¬ë¦„ ì…ë‹ˆë‹¤");
 			break;
 		case 9:// if(a==9)
 		case 10:// if(a==10)
 		case 11:// if(a==11)
-			System.out.println("°¡À» ÀÔ´Ï´Ù");
+			System.out.println("ê°€ì„ ì…ë‹ˆë‹¤");
 			break;
 		case 12:// if(a==12)
 		case 1:// if(a==1)
 		case 2:// if(a==2)
-			System.out.println("°Ü¿ï ÀÔ´Ï´Ù");
+			System.out.println("ê²¨ìš¸ ì…ë‹ˆë‹¤");
 			break;
 		default: //else { }
-			System.out.println("Àß¸øÀÔ·ÂÇß½À´Ï´Ù. 1¿ù~12¿ù »çÀÌ¿¡¼­ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			System.out.println("ì˜ëª»ì…ë ¥í–ˆìŠµë‹ˆë‹¤. 1ì›”~12ì›” ì‚¬ì´ì—ì„œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 			break;
 		
 		}
 	}
 	public static void control_for() {
-		System.out.println("== for ±¸¹®À» »ç¿ëÇÑ ¿¹Á¦ ½ÇÇà == ");
-		System.out.println("== ±¸±¸´Ü ¿¹Á¦, Ãâ·ÂÇÒ ±¸±¸´ÜÀÇ ¹üÀ§¸¦ Á¤ÇØÁÖ¼¼¿ä == ");
-		System.out.println("½ÃÀÛÇÒ ±¸±¸´Ü¿¡ ´ëÇÑ ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä(1~) : ");
+		System.out.println("== for êµ¬ë¬¸ì„ ì‚¬ìš©í•œ ì˜ˆì œ ì‹¤í–‰ == ");
+		System.out.println("== êµ¬êµ¬ë‹¨ ì˜ˆì œ, ì¶œë ¥í•  êµ¬êµ¬ë‹¨ì˜ ë²”ìœ„ë¥¼ ì •í•´ì£¼ì„¸ìš” == ");
+		System.out.println("ì‹œì‘í•  êµ¬êµ¬ë‹¨ì— ëŒ€í•œ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”(1~) : ");
 		
 		Scanner scan = new Scanner(System.in);
 		int a = scan.nextInt();
-		System.out.println("³¡ ±¸±¸´Ü¿¡ ´ëÇÑ  ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä(1~9) : ");
+		System.out.println("ë êµ¬êµ¬ë‹¨ì— ëŒ€í•œ  ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”(1~9) : ");
 		int b = scan.nextInt();
 		for(int i=a;i<=b;i++) {
 			for(int j=1;j<=9;j++) {
@@ -544,9 +742,9 @@ public class PrintEx {
 		}
 	}
 	public static void control_while() {
-		System.out.println("== while ±¸¹®À» »ç¿ëÇÑ ¿¹Á¦ ½ÇÇà == ");
-		System.out.println("== 1ºÎÅÍ ÀÔ·Â¹ŞÀº ¼ıÀÚ±îÁö µ¡¼ÀÀ» ¼öÇà== ");
-		System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä(1~200000) : ");
+		System.out.println("== while êµ¬ë¬¸ì„ ì‚¬ìš©í•œ ì˜ˆì œ ì‹¤í–‰ == ");
+		System.out.println("== 1ë¶€í„° ì…ë ¥ë°›ì€ ìˆ«ìê¹Œì§€ ë§ì…ˆì„ ìˆ˜í–‰== ");
+		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”(1~200000) : ");
 		
 		Scanner scan = new Scanner(System.in);
 		int a = scan.nextInt();
@@ -557,38 +755,38 @@ public class PrintEx {
 			s+=i;//1+2
 		//
 		}
-		System.out.printf("1ºÎÅÍ %d±îÁöÀÇ ÇÕ: %d", a,s);
+		System.out.printf("1ë¶€í„° %dê¹Œì§€ì˜ í•©: %d", a,s);
 	}
 	public static void control_dowhile() {
-		System.out.println("== do while ±¸¹®À» »ç¿ëÇÑ ¿¹Á¦ ½ÇÇà == ");
-		System.out.println("== 1ºÎÅÍ ÀÔ·Â¹ŞÀº ¼ıÀÚ±îÁö µ¡¼ÀÀ» ¼öÇà== ");
-		System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä(1~200000) : ");
+		System.out.println("== do while êµ¬ë¬¸ì„ ì‚¬ìš©í•œ ì˜ˆì œ ì‹¤í–‰ == ");
+		System.out.println("== 1ë¶€í„° ì…ë ¥ë°›ì€ ìˆ«ìê¹Œì§€ ë§ì…ˆì„ ìˆ˜í–‰== ");
+		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”(1~200000) : ");
 		
 		Scanner scan = new Scanner(System.in);
 		int a = scan.nextInt();
 		int s=0;
 		int i=0;
 		do {
-			//°è»ê
+			//ê³„ì‚°
 			i++;
 			s+=i;
 		}while(i<a);
-		System.out.printf("1ºÎÅÍ %d±îÁöÀÇ ÇÕ: %d", a,s);
+		System.out.printf("1ë¶€í„° %dê¹Œì§€ì˜ í•©: %d", a,s);
 	}
 	public static int control_menu() {
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("Á¦¾î¿¬½ÀÀ» ÇÕ´Ï´Ù. if, for, while, do while, which ");
+		System.out.println("ì œì–´ì—°ìŠµì„ í•©ë‹ˆë‹¤. if, for, while, do while, which ");
 		System.out.println("------------------");
-		System.out.println("¸Ş´º 1) if  ");
-		System.out.println("¸Ş´º 2) switch ");
-		System.out.println("¸Ş´º 3) for ");
-		System.out.println("¸Ş´º 4) while ");
-		System.out.println("¸Ş´º 5) do~while ");
-		System.out.println("¸Ş´º 9) ¸Ş´º ");
-		System.out.println("¸Ş´º 0) Á¾·á ");
+		System.out.println("ë©”ë‰´ 1) if  ");
+		System.out.println("ë©”ë‰´ 2) switch ");
+		System.out.println("ë©”ë‰´ 3) for ");
+		System.out.println("ë©”ë‰´ 4) while ");
+		System.out.println("ë©”ë‰´ 5) do~while ");
+		System.out.println("ë©”ë‰´ 9) ë©”ë‰´ ");
+		System.out.println("ë©”ë‰´ 0) ì¢…ë£Œ ");
 		System.out.println("------------------");
-		System.out.println("¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä: ");
+		System.out.println("ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš”: ");
 		
 		int m = scan.nextInt();
 		
@@ -621,7 +819,7 @@ public class PrintEx {
 			case 0:
 				break;
 			default:
-				System.out.println("¸Ş´º¸¦ È®ÀÎÇÏ°í ÀÔ·ÂÇØÁÖ¼¼¿ä");
+				System.out.println("ë©”ë‰´ë¥¼ í™•ì¸í•˜ê³  ì…ë ¥í•´ì£¼ì„¸ìš”");
 				break;
 			}
 			
@@ -630,49 +828,49 @@ public class PrintEx {
 		return ;
 	}
 	public static int dowhileEx() {
-		System.out.println("dowhile, while µ¿ÀÛÀ» ºñ±³ÇÕ´Ï´Ù");
-		System.out.println("¹İº¹ È¸¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
+		System.out.println("dowhile, while ë™ì‘ì„ ë¹„êµí•©ë‹ˆë‹¤");
+		System.out.println("ë°˜ë³µ íšŒìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
 		Scanner scan = new Scanner(System.in);
 		int a = scan.nextInt();
 		int i=0;
 		while(i<a) {
-			System.out.println("while ±¸¹® µ¿ÀÛ....");
+			System.out.println("while êµ¬ë¬¸ ë™ì‘....");
 			i++;
 			if(i>10) {
-				System.out.printf("whileÃâ·ÂÈ½¼ö: %d\n", i);
+				System.out.printf("whileì¶œë ¥íšŸìˆ˜: %d\n", i);
 				return 991;
 			}
 		}
-		System.out.println("= while Ãâ·Â ³¡ = ");
+		System.out.println("= while ì¶œë ¥ ë = ");
 		int j=0;
 		do {
-			System.out.println("do~while ±¸¹® µ¿ÀÛ....");
+			System.out.println("do~while êµ¬ë¬¸ ë™ì‘....");
 			j++;
 			if(j>15) {
 				break;
 			}
 			
 		}while(j<a);
-		System.out.println("= do~while Ãâ·Â ³¡ = ");
-		System.out.printf("whileÃâ·ÂÈ½¼ö: %d", i);
-		System.out.printf("\ndo whileÃâ·ÂÈ½¼ö: %d", j);
+		System.out.println("= do~while ì¶œë ¥ ë = ");
+		System.out.printf("whileì¶œë ¥íšŸìˆ˜: %d", i);
+		System.out.printf("\ndo whileì¶œë ¥íšŸìˆ˜: %d", j);
 		
 		return 0;
 		
 	}
 	public static void whileEx_menu() {
-		System.out.println("±¸±¸´ÜÀ» Ãâ·ÂÇØÁİ´Ï´Ù");
+		System.out.println("êµ¬êµ¬ë‹¨ì„ ì¶œë ¥í•´ì¤ë‹ˆë‹¤");
 		System.out.println("------------------");
-		System.out.println("¸Ş´º 1) ÇöÀç³¯ÀÚ½Ã°£ ");
-		System.out.println("¸Ş´º 2) ±¸±¸´ÜÃâ·Â ");
-		System.out.println("¸Ş´º 3) °è»ê±â ");
-		System.out.println("¸Ş´º 9) ¸Ş´º ");
-		System.out.println("¸Ş´º 0) Á¾·á ");
+		System.out.println("ë©”ë‰´ 1) í˜„ì¬ë‚ ìì‹œê°„ ");
+		System.out.println("ë©”ë‰´ 2) êµ¬êµ¬ë‹¨ì¶œë ¥ ");
+		System.out.println("ë©”ë‰´ 3) ê³„ì‚°ê¸° ");
+		System.out.println("ë©”ë‰´ 9) ë©”ë‰´ ");
+		System.out.println("ë©”ë‰´ 0) ì¢…ë£Œ ");
 		System.out.println("------------------");
-		System.out.println("¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä: ");
+		System.out.println("ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš”: ");
 	}
 	public static void whileEx() {
-		Scanner scan = new Scanner(System.in);// ¹®ÀÚÀÔ·Â
+		Scanner scan = new Scanner(System.in);// ë¬¸ìì…ë ¥
 				
 		int a;
 		//int i=0;
@@ -680,32 +878,32 @@ public class PrintEx {
 		while(true) {
 			a = scan.nextInt();
 			if(a==0) {
-				System.out.println("Á¾·áÇÕ´Ï´Ù");
+				System.out.println("ì¢…ë£Œí•©ë‹ˆë‹¤");
 				break;
 			}
 			if(a==9) {
-				System.out.println("¸Ş´º¸¦ ¾È³»ÇÕ´Ï´Ù\n");
+				System.out.println("ë©”ë‰´ë¥¼ ì•ˆë‚´í•©ë‹ˆë‹¤\n");
 				whileEx_menu();
 				continue;
 			}
 			if(a==1) {
-				System.out.println("ÇöÀç³¯ÀÚ½Ã°£À» ¾È³»ÇÕ´Ï´Ù");
+				System.out.println("í˜„ì¬ë‚ ìì‹œê°„ì„ ì•ˆë‚´í•©ë‹ˆë‹¤");
 				datetime_memu();
 				
 			}else if(a==2) {
-				System.out.println("±¸±¸´ÜÃâ·ÂÀ» Ãâ·ÂÇÕ´Ï´Ù");
+				System.out.println("êµ¬êµ¬ë‹¨ì¶œë ¥ì„ ì¶œë ¥í•©ë‹ˆë‹¤");
 				gugudan_menu();
 				
 			}else if(a==3) {
-				System.out.println("°è»ê±â¸¦ ½ÃÀÛÇÕ´Ï´Ù");
+				System.out.println("ê³„ì‚°ê¸°ë¥¼ ì‹œì‘í•©ë‹ˆë‹¤");
 				//calculator_menu();
 				operator1();
 			}else {
-				System.out.println("¸Ş´ºÇ×¸ñ¿¡ ¾ø½À´Ï´Ù\n");
+				System.out.println("ë©”ë‰´í•­ëª©ì— ì—†ìŠµë‹ˆë‹¤\n");
 				
 			}
 			
-			System.out.println("°è¼ÓÇÏ·Á¸é ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä: ");
+			System.out.println("ê³„ì†í•˜ë ¤ë©´ ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš”: ");
 		}
 		
 		
@@ -714,9 +912,9 @@ public class PrintEx {
 		
 	}
 	public static void gugudan_menu() {
-		System.out.println("Ãâ·ÂÇÒ ±¸±¸´ÜÀ» ÀÔ·ÂÇÏ¼¼¿ä:");
+		System.out.println("ì¶œë ¥í•  êµ¬êµ¬ë‹¨ì„ ì…ë ¥í•˜ì„¸ìš”:");
 		int s;
-		Scanner scan = new Scanner(System.in);// ¹®ÀÚÀÔ·Â
+		Scanner scan = new Scanner(System.in);// ë¬¸ìì…ë ¥
 		s = scan.nextInt();
 		for (int j = 1; j <= 9; j++) {
 			int r = 0;
@@ -730,16 +928,16 @@ public class PrintEx {
 	public static void gugudanSum() {
 
 		int a, b;
-		Scanner scan = new Scanner(System.in);// ¹®ÀÚÀÔ·Â
+		Scanner scan = new Scanner(System.in);// ë¬¸ìì…ë ¥
 
-		System.out.println("½ÃÀÛ, ³¡´ÜÀ» ÀÔ·Â¹Ş¾Æ¼­ ±¸±¸´ÜÀ» °è»êÇÕ´Ï´Ù");
-		System.out.println("½ÃÀÛÇÒ ±¸±¸´Ü) ¼ıÀÚ a¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ì‹œì‘, ëë‹¨ì„ ì…ë ¥ë°›ì•„ì„œ êµ¬êµ¬ë‹¨ì„ ê³„ì‚°í•©ë‹ˆë‹¤");
+		System.out.println("ì‹œì‘í•  êµ¬êµ¬ë‹¨) ìˆ«ì aë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 		a = scan.nextInt();
-		System.out.println("³¡ ±¸±¸´Ü) ¼ıÀÚ b¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ë êµ¬êµ¬ë‹¨) ìˆ«ì bë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 		b = scan.nextInt();
 
 		int s = 0;
-		System.out.println("9x9´ÜÀ» Ãâ·ÂÇÕ´Ï´Ù");
+		System.out.println("9x9ë‹¨ì„ ì¶œë ¥í•©ë‹ˆë‹¤");
 		for (int i = 2; i <= 9; i++) {
 			for (int j = 1; j <= 9; j++) {
 				int r = 0;
@@ -751,7 +949,7 @@ public class PrintEx {
 			System.out.println();
 
 		}
-		System.out.println("¹üÀ§¿¡¼­ ±¸±¸´ÜÀÇ ÇÕ»ê °è»ê=" + s);
+		System.out.println("ë²”ìœ„ì—ì„œ êµ¬êµ¬ë‹¨ì˜ í•©ì‚° ê³„ì‚°=" + s);
 	}
 	public static void datetime_memu() {
 		int h; 
@@ -760,8 +958,8 @@ public class PrintEx {
 		String ampm;
 		ampm = h>12?"PM":"AM";
 		
-		System.out.println("1) ÇöÀç½Ã°£:"+ampm+" "+h);
-		System.out.printf("2) ÇöÀç³¯ÀÚ¿Í ½Ã°£: [%1$tF %tT]%n"
+		System.out.println("1) í˜„ì¬ì‹œê°„:"+ampm+" "+h);
+		System.out.printf("2) í˜„ì¬ë‚ ìì™€ ì‹œê°„: [%1$tF %tT]%n"
 				, Calendar.getInstance());
 		
 	}
@@ -771,48 +969,48 @@ public class PrintEx {
 		h= cal.get(Calendar.HOUR_OF_DAY);
 		String ampm;
 		ampm = h>12?"PM":"AM";
-		System.out.println("1) ÇöÀç½Ã°£:"+ampm+" "+h);
+		System.out.println("1) í˜„ì¬ì‹œê°„:"+ampm+" "+h);
 		
 		if(h>12) {
 			ampm="PM";
 		}else {
 			ampm="AM";
 		}
-		System.out.println("2) ÇöÀç½Ã°£:"+ampm+" "+h);
+		System.out.println("2) í˜„ì¬ì‹œê°„:"+ampm+" "+h);
 		
 		System.out.println();
 		int p;
 		int sensor_p=1000;
 		String r;
 		p=sensor_p>100? 10: -10;
-		r=p>0? "ÀüÁø":"ÈÄÁø";
-		System.out.println("¹æÇâ:"+r+", ±¸µ¿ µ¿·Â:"+p);
+		r=p>0? "ì „ì§„":"í›„ì§„";
+		System.out.println("ë°©í–¥:"+r+", êµ¬ë™ ë™ë ¥:"+p);
 		
 		String s;
-		s=(r.equals("ÀüÁø"))?"ÁÖÇàÁßÀÔ´Ï´Ù":"ÁÖÇàÇÏ°í ÀÖÁö ¾Ê½À´Ï´Ù";
-		System.out.println("ÁÖÇàÆÇ´Ü:"+ s);
+		s=(r.equals("ì „ì§„"))?"ì£¼í–‰ì¤‘ì…ë‹ˆë‹¤":"ì£¼í–‰í•˜ê³  ìˆì§€ ì•ŠìŠµë‹ˆë‹¤";
+		System.out.println("ì£¼í–‰íŒë‹¨:"+ s);
 		
 	}
 	public static void datetime() {
-		System.out.println("datetime¿¡ ´ëÇÑ ¿¹Á¦");
+		System.out.println("datetimeì— ëŒ€í•œ ì˜ˆì œ");
 		System.out.println();
-		System.out.printf("Local timeÀÇ Ãâ·Â: [%tT], 14:27:38 %n", Calendar.getInstance());
-		System.out.printf("Local timeÀÇ Ãâ·Â: [%tr], 02:27:24 ¿ÀÈÄ %n", Calendar.getInstance());
-		System.out.printf("Local timeÀÇ Ãâ·Â: [%tF], 2019-07-09  %n", Calendar.getInstance());
-		System.out.printf("Local timeÀÇ Ãâ·Â: [%1$tF %1$tA] 2019-07-09 È­¿äÀÏ%n", Calendar.getInstance());
-		System.out.printf("Local timeÀÇ Ãâ·Â: [%1$tF %tT], 14:27:38 %n", Calendar.getInstance());
+		System.out.printf("Local timeì˜ ì¶œë ¥: [%tT], 14:27:38 %n", Calendar.getInstance());
+		System.out.printf("Local timeì˜ ì¶œë ¥: [%tr], 02:27:24 ì˜¤í›„ %n", Calendar.getInstance());
+		System.out.printf("Local timeì˜ ì¶œë ¥: [%tF], 2019-07-09  %n", Calendar.getInstance());
+		System.out.printf("Local timeì˜ ì¶œë ¥: [%1$tF %1$tA] 2019-07-09 í™”ìš”ì¼%n", Calendar.getInstance());
+		System.out.printf("Local timeì˜ ì¶œë ¥: [%1$tF %tT], 14:27:38 %n", Calendar.getInstance());
 		
 		int h; 
 		Calendar cal = Calendar.getInstance();
 		h= cal.get(Calendar.HOUR_OF_DAY);
 		String ampm;
 		ampm = h>12?"PM":"AM";
-		System.out.println("ÇöÀç½Ã°£:"+ampm+" "+h);
+		System.out.println("í˜„ì¬ì‹œê°„:"+ampm+" "+h);
 		
-		//°èÀıÆÇº°
-		// º½ 3~5, ¿©¸§6~8, °¡À»9~11, °Ü¿ï12~2
+		//ê³„ì ˆíŒë³„
+		// ë´„ 3~5, ì—¬ë¦„6~8, ê°€ì„9~11, ê²¨ìš¸12~2
 		int m,d;
-		String mm="º½";
+		String mm="ë´„";
 		m= cal.get(Calendar.MONTH);
 		m+=1;
 		d= cal.get(Calendar.DAY_OF_MONTH);
@@ -820,29 +1018,29 @@ public class PrintEx {
 		case 3:
 		case 4:
 		case 5:
-			mm="º½";
+			mm="ë´„";
 			break;
 		case 6:
 		case 7:
 		case 8:
-			mm="¿©¸§";
+			mm="ì—¬ë¦„";
 			break;
 		case 9:
 		case 10:
 		case 11:
-			mm="°¡À»";
+			mm="ê°€ì„";
 			break;
 		case 12:
 		case 1:
 		case 2:
-			mm="°Ü¿ï";
+			mm="ê²¨ìš¸";
 			break;
 		default:
-			mm="º½";
+			mm="ë´„";
 			break;
 		}
-		System.out.printf("ÇöÀçÀÇ ³¯ÀÚ:%s¿ù %sÀÏ - ÀÔ´Ï´Ù. ", m,d);
-		System.out.println("ÇöÀçÀÇ °èÀı:"+ mm);
+		System.out.printf("í˜„ì¬ì˜ ë‚ ì:%sì›” %sì¼ - ì…ë‹ˆë‹¤. ", m,d);
+		System.out.println("í˜„ì¬ì˜ ê³„ì ˆ:"+ mm);
 		
 	}
 	public static void operator6_form() {
@@ -850,59 +1048,59 @@ public class PrintEx {
 		System.out.printf("[%10d] * %n", 12345);
 		System.out.printf("[%-10d] * %n", 12345);
 		
-		System.out.printf("ÀÜ¾×:[%, d]¿ø %n", 12345);
-		System.out.printf("°ª:[%10.2f] %n", 12345.6789012345);
-		System.out.printf("°ª:[%.2f] %n", 12345.6789012345);
-		System.out.printf("°ª:[%010.2f] %n", 12345.6789012345);
-		System.out.printf("°ª:[%d] %n", 12345L);
-		System.out.printf("°ª:[%+d] %n", 12345L);
-		System.out.printf("°ª:[%+d] %n", -12345);
+		System.out.printf("ì”ì•¡:[%, d]ì› %n", 12345);
+		System.out.printf("ê°’:[%10.2f] %n", 12345.6789012345);
+		System.out.printf("ê°’:[%.2f] %n", 12345.6789012345);
+		System.out.printf("ê°’:[%010.2f] %n", 12345.6789012345);
+		System.out.printf("ê°’:[%d] %n", 12345L);
+		System.out.printf("ê°’:[%+d] %n", 12345L);
+		System.out.printf("ê°’:[%+d] %n", -12345);
 		
-		System.out.printf("%s hex °ª:[%h] %n", 10, 10);
-		System.out.printf("%s bool °ª:[%b] %n", "10>10", 10>10);
-		System.out.printf("%s float °ª:[%f] %n", "12345.6789", 12345.6789);
-		System.out.printf("%s float °ª:[%8.2f] %n", "12345.6789", 12345.6789);
-		System.out.printf("%s float °ª:[%.2f] %n", "12345.6789", 12345.6789);
-		System.out.printf("%s float °ª:[%f] %n", "12345.0e-03", 12345.0e-03);
+		System.out.printf("%s hex ê°’:[%h] %n", 10, 10);
+		System.out.printf("%s bool ê°’:[%b] %n", "10>10", 10>10);
+		System.out.printf("%s float ê°’:[%f] %n", "12345.6789", 12345.6789);
+		System.out.printf("%s float ê°’:[%8.2f] %n", "12345.6789", 12345.6789);
+		System.out.printf("%s float ê°’:[%.2f] %n", "12345.6789", 12345.6789);
+		System.out.printf("%s float ê°’:[%f] %n", "12345.0e-03", 12345.0e-03);
 		
-		System.out.printf("%s g°ª:[%g] %n", "12345.6789", 12345.6789);//¼Ò¼ö1ÀÚ¸® ¹İ¿Ã¸²
-		System.out.printf("%s g°ª:[%10.5g] %n", "12345.6789", 12345.6789);
-		System.out.printf("%s g°ª:[%10.3g] %n", "12345.6789", 12345.6789);
-		System.out.printf("%s g°ª:[%10.2g] %n", "12345.6789", 12345.6789);
+		System.out.printf("%s gê°’:[%g] %n", "12345.6789", 12345.6789);//ì†Œìˆ˜1ìë¦¬ ë°˜ì˜¬ë¦¼
+		System.out.printf("%s gê°’:[%10.5g] %n", "12345.6789", 12345.6789);
+		System.out.printf("%s gê°’:[%10.3g] %n", "12345.6789", 12345.6789);
+		System.out.printf("%s gê°’:[%10.2g] %n", "12345.6789", 12345.6789);
 		
-		System.out.printf("%s e°ª:[%e] %n", "12345.0e-03", 12345.0e-03);
-		System.out.printf("%s e°ª:[%10.3e] %n", "12345.0e-03", 12345.0e-03);
+		System.out.printf("%s eê°’:[%e] %n", "12345.0e-03", 12345.0e-03);
+		System.out.printf("%s eê°’:[%10.3e] %n", "12345.0e-03", 12345.0e-03);
 		
-		System.out.printf("%s hex°ª:[%x] %n", "1234", 1234);
-		System.out.printf("%s hex°ª:[%X] %n", "1234", 1234);
-		System.out.printf("%s hex°ª:[%#7X] %n", "1234", 1234);
+		System.out.printf("%s hexê°’:[%x] %n", "1234", 1234);
+		System.out.printf("%s hexê°’:[%X] %n", "1234", 1234);
+		System.out.printf("%s hexê°’:[%#7X] %n", "1234", 1234);
 		
-		System.out.printf("%s octet°ª:[%o] %n", "1234", 1234);
-		System.out.printf("%s octet°ª:[%#o] %n", "1234", 1234);
+		System.out.printf("%s octetê°’:[%o] %n", "1234", 1234);
+		System.out.printf("%s octetê°’:[%#o] %n", "1234", 1234);
 		
-		System.out.printf("%s char°ª:[%c] %n", "\u1234", '\u1234');
-		System.out.printf("%s char°ª:[%c] %n", "a", 'a');
-		System.out.printf("%s char°ª:[%c] %n", "65", 65);
-		System.out.printf("%s char°ª:[%C] %n", "a", 'a');
+		System.out.printf("%s charê°’:[%c] %n", "\u1234", '\u1234');
+		System.out.printf("%s charê°’:[%c] %n", "a", 'a');
+		System.out.printf("%s charê°’:[%c] %n", "65", 65);
+		System.out.printf("%s charê°’:[%C] %n", "a", 'a');
 		
-		System.out.printf("¹®ÀÚ¿­Ãâ·Â: [%s] %n", "abcde");
-		System.out.printf("¹®ÀÚ¿­Ãâ·Â: [%10s] %n", "abcde");
-		System.out.printf("¹®ÀÚ¿­Ãâ·Â: [%10.3s] %n", "abcde");
-		System.out.printf("¹®ÀÚ¿­Ãâ·Â: [%S] %n", "abcde");
+		System.out.printf("ë¬¸ìì—´ì¶œë ¥: [%s] %n", "abcde");
+		System.out.printf("ë¬¸ìì—´ì¶œë ¥: [%10s] %n", "abcde");
+		System.out.printf("ë¬¸ìì—´ì¶œë ¥: [%10.3s] %n", "abcde");
+		System.out.printf("ë¬¸ìì—´ì¶œë ¥: [%S] %n", "abcde");
 		
-		System.out.printf("%s ÀÇ Ãâ·Â: [%d] %n", "-12345", -12345);
-		System.out.printf("%s ÀÇ Ãâ·Â: [%2f] %n", "-12345", 12345.678);
+		System.out.printf("%s ì˜ ì¶œë ¥: [%d] %n", "-12345", -12345);
+		System.out.printf("%s ì˜ ì¶œë ¥: [%2f] %n", "-12345", 12345.678);
 		
 		
-		System.out.printf("Local timeÀÇ Ãâ·Â: [%tT], 14:27:38 %n", Calendar.getInstance());
-		System.out.printf("Local timeÀÇ Ãâ·Â: [%tr], 02:27:24 ¿ÀÈÄ %n", Calendar.getInstance());
-		System.out.printf("Local timeÀÇ Ãâ·Â: [%tF], 2019-07-09  %n", Calendar.getInstance());
-		System.out.printf(" Local timeÀÇ Ãâ·Â: [%1$tF %1$tA] 2019-07-09 È­¿äÀÏ%n", Calendar.getInstance());
+		System.out.printf("Local timeì˜ ì¶œë ¥: [%tT], 14:27:38 %n", Calendar.getInstance());
+		System.out.printf("Local timeì˜ ì¶œë ¥: [%tr], 02:27:24 ì˜¤í›„ %n", Calendar.getInstance());
+		System.out.printf("Local timeì˜ ì¶œë ¥: [%tF], 2019-07-09  %n", Calendar.getInstance());
+		System.out.printf(" Local timeì˜ ì¶œë ¥: [%1$tF %1$tA] 2019-07-09 í™”ìš”ì¼%n", Calendar.getInstance());
 		
-		System.out.printf("Local timeÀÇ Ãâ·Â: [%1$tF %tT], 14:27:38 %n", Calendar.getInstance());
+		System.out.printf("Local timeì˜ ì¶œë ¥: [%1$tF %tT], 14:27:38 %n", Calendar.getInstance());
 	}
 	public static void operator5() {
-		System.out.println("ºñÆ®¿¬»ê");
+		System.out.println("ë¹„íŠ¸ì—°ì‚°");
 		
 		System.out.printf("10 & 7 = %d", 10 & 7);
 		System.out.printf("\n123 & 456 = %d", 123 & 456);
@@ -921,9 +1119,9 @@ public class PrintEx {
 	}
 	public static void operator4() {
 		int a=99;
-		System.out.printf(" AND¿¬»ê: %s", (a>=100) && (a<=200) );
-		System.out.printf("\n OR¿¬»ê: %s", (a>=100) || (a<=200) );
-		System.out.printf("\n NOT¿¬»ê: %s, not: %s", (a==100), !(a==100) );
+		System.out.printf(" ANDì—°ì‚°: %s", (a>=100) && (a<=200) );
+		System.out.printf("\n ORì—°ì‚°: %s", (a>=100) || (a<=200) );
+		System.out.printf("\n NOTì—°ì‚°: %s, not: %s", (a==100), !(a==100) );
 	}
 	public static void operator3() {
 		int i=0, j=0;
@@ -944,7 +1142,7 @@ public class PrintEx {
 	}
 	public static void for01() {
 		//int i=0,j;
-		//2´Ü
+		//2ë‹¨
 		// ixj=r
 		// 2x1=2
 		// 2x2=4
@@ -955,7 +1153,7 @@ public class PrintEx {
 		// 2x7=14
 		// 2x8=16
 		// 2x9=18
-		System.out.println("9x9´ÜÀ» Ãâ·ÂÇÕ´Ï´Ù");
+		System.out.println("9x9ë‹¨ì„ ì¶œë ¥í•©ë‹ˆë‹¤");
 		for(int i=2;i<=9;i++) {
 			for(int j=1;j<=9;j++) {
 				int r=0;
@@ -972,44 +1170,44 @@ public class PrintEx {
 		String m=null;
 		int r=0;
 		
-		Scanner scan = new Scanner(System.in);// ¹®ÀÚÀÔ·Â
+		Scanner scan = new Scanner(System.in);// ë¬¸ìì…ë ¥
 		
-		System.out.println("³í¸®¿¬»êÀ» ÇÕ´Ï´Ù");
-		System.out.println("¼ıÀÚ a¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ë…¼ë¦¬ì—°ì‚°ì„ í•©ë‹ˆë‹¤");
+		System.out.println("ìˆ«ì aë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 		a = scan.nextInt();
-		System.out.println("¼ıÀÚ b¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ìˆ«ì bë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 		b = scan.nextInt();
 		
 		System.out.println();
 		System.out.println("1) ==  2) != 3) >  4) <");
 		System.out.println("5) >=  6) <=  ");
-		System.out.println("°è»êÇÒ ¿¬»êÀÚ¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä: ");
-		s = scan.nextInt(); //Å°º¸µå ¹®ÀÚ ÀÔ·Â
+		System.out.println("ê³„ì‚°í•  ì—°ì‚°ìë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”: ");
+		s = scan.nextInt(); //í‚¤ë³´ë“œ ë¬¸ì ì…ë ¥
 		
 		if(s==1) {
 			m="==";
-			System.out.printf("¿¬»ê½Ä: %d %s %d, °á°ú: %s",a,m,b,a==b);
+			System.out.printf("ì—°ì‚°ì‹: %d %s %d, ê²°ê³¼: %s",a,m,b,a==b);
 		} else if(s==2) {
 			m="!=";
-			System.out.printf("¿¬»ê½Ä: %d %s %d, °á°ú: %s",a,m,b,a!=b);
+			System.out.printf("ì—°ì‚°ì‹: %d %s %d, ê²°ê³¼: %s",a,m,b,a!=b);
 		} else if(s==3) {
 			m=">";
-			System.out.printf("¿¬»ê½Ä: %d %s %d, °á°ú: %s",a,m,b,a>b);
+			System.out.printf("ì—°ì‚°ì‹: %d %s %d, ê²°ê³¼: %s",a,m,b,a>b);
 		} else if(s==4) {
 			m="<";
-			System.out.printf("¿¬»ê½Ä: %d %s %d, °á°ú: %s",a,m,b,a<b);
+			System.out.printf("ì—°ì‚°ì‹: %d %s %d, ê²°ê³¼: %s",a,m,b,a<b);
 		} else if(s==5) {
 			m=">=";
-			System.out.printf("¿¬»ê½Ä: %d %s %d, °á°ú: %s",a,m,b,a>=b);
+			System.out.printf("ì—°ì‚°ì‹: %d %s %d, ê²°ê³¼: %s",a,m,b,a>=b);
 		} else if(s==6) {
 			m="<=";
-			System.out.printf("¿¬»ê½Ä: %d %s %d, °á°ú: %s",a,m,b,a<=b);
+			System.out.printf("ì—°ì‚°ì‹: %d %s %d, ê²°ê³¼: %s",a,m,b,a<=b);
 		} else {
 			m=null;
 		}
 	}
 	public static void operator1() {
-	//¿¬»êÀÚ Á¶±İ´õ ¾Ë¾Æº¾½Ã´Ù
+	//ì—°ì‚°ì ì¡°ê¸ˆë” ì•Œì•„ë´…ì‹œë‹¤
 	// +=
 	// -=
 	// *=
@@ -1020,18 +1218,18 @@ public class PrintEx {
 		String m=null;
 		int a=0, b = 0;
 		double n=0, s=0;
-		Scanner scan = new Scanner(System.in);// ¹®ÀÚÀÔ·Â
+		Scanner scan = new Scanner(System.in);// ë¬¸ìì…ë ¥
 		
-		System.out.println("¼ıÀÚ a¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ìˆ«ì aë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 		a = scan.nextInt();
-		System.out.println("¼ıÀÚ b¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ìˆ«ì bë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 		b = scan.nextInt();
 		System.out.println();
 		System.out.println("1) +=  2) -= 3) *=  4) /=");
 		System.out.println("5) %=  6) ++ 7) --  ");
-		System.out.println("°è»êÇÒ ¿¬»êÀÚ¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä: ");
-		s = scan.nextInt(); //Å°º¸µå ¹®ÀÚ ÀÔ·Â
-/*      ³í¸®°è»ê
+		System.out.println("ê³„ì‚°í•  ì—°ì‚°ìë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”: ");
+		s = scan.nextInt(); //í‚¤ë³´ë“œ ë¬¸ì ì…ë ¥
+/*      ë…¼ë¦¬ê³„ì‚°
  * 		and, &&, or, ||, not
 		not(true) => false => 0
 		not (false) => true => 1
@@ -1049,13 +1247,13 @@ public class PrintEx {
 		false + false = false => 0 + 0 =0
 		true || false => 1 => true
 
-°ü°è ¿¬»êÀÚ
+ê´€ê³„ ì—°ì‚°ì
 
  
 *
 */
 		if(1> s || s>7) {
-			System.out.println("¼±ÅÃÇÑ ¿¬»êÀÚ´Â ¾ø½À´Ï´Ù. =³¡=");
+			System.out.println("ì„ íƒí•œ ì—°ì‚°ìëŠ” ì—†ìŠµë‹ˆë‹¤. =ë=");
 			return;
 		}
 		
@@ -1096,30 +1294,30 @@ public class PrintEx {
 			n=a+b;
 			m="--";
 		}
-		System.out.printf("°è»ê½Ä: %d %s %d",a,m,b);
-		System.out.println("=> °è»ê°á°ú´Â: " + n);
+		System.out.printf("ê³„ì‚°ì‹: %d %s %d",a,m,b);
+		System.out.println("=> ê³„ì‚°ê²°ê³¼ëŠ”: " + n);
 	}
 	public static void input() {
 		String m=null;
-		Scanner scan = new Scanner(System.in);// ¹®ÀÚÀÔ·Â
-		System.out.println("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
-		m = scan.nextLine(); //Å°º¸µå ¹®ÀÚ ÀÔ·Â
-		System.out.println("ÀÔ·Â°ª: " + m + "\n");
+		Scanner scan = new Scanner(System.in);// ë¬¸ìì…ë ¥
+		System.out.println("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
+		m = scan.nextLine(); //í‚¤ë³´ë“œ ë¬¸ì ì…ë ¥
+		System.out.println("ì…ë ¥ê°’: " + m + "\n");
 		
 		int k=0;
-		System.out.println("ÁÖÇà°Å¸®(km)¸¦ ÀÔ·Â: ");
+		System.out.println("ì£¼í–‰ê±°ë¦¬(km)ë¥¼ ì…ë ¥: ");
 		k=scan.nextInt();
 		
 		double li=0;
-		System.out.println("ÁÖÀ¯¸®ÅÍ(liter)¸¦ ÀÔ·Â: ");
+		System.out.println("ì£¼ìœ ë¦¬í„°(liter)ë¥¼ ì…ë ¥: ");
 		li=scan.nextInt();
 		
 		double avg = 0;
 		avg = k/ li;
-		System.out.print("°è»ê ¿¬ºñ: "+ avg);
+		System.out.print("ê³„ì‚° ì—°ë¹„: "+ avg);
 	}
 	public static void string() {
-		String s1 ="ÀÚµÎÁê½º~";
+		String s1 ="ìë‘ì¥¬ìŠ¤~";
 		String s2 ="100";
 		String s3 ="20";
 		String value = null;
@@ -1130,13 +1328,13 @@ public class PrintEx {
 		n1 = Integer.parseInt(s2);
 		n2 = Integer.parseInt(s3);
 						
-		System.out.printf("¹®ÀÚ¿­:%s \n", s1);
+		System.out.printf("ë¬¸ìì—´:%s \n", s1);
 		
 		value = Integer.toString(n1*n2);
-		System.out.printf("°ª:%s \n", n1*n2);
+		System.out.printf("ê°’:%s \n", n1*n2);
 		
 		System.out.println();
-		System.out.println(s1+"°ªÀº "+ value + " ÀÔ´Ï´Ù.");
+		System.out.println(s1+"ê°’ì€ "+ value + " ì…ë‹ˆë‹¤.");
 		
 	}
 	public static void bool() {
@@ -1152,12 +1350,12 @@ public class PrintEx {
 	public static void ascii() {
 		char d;
 		d='#';
-		System.out.printf("%cÀÇ ASCII°ªÀº %d ÀÔ´Ï´Ù"
+		System.out.printf("%cì˜ ASCIIê°’ì€ %d ì…ë‹ˆë‹¤"
 				, d, (int)d);
 	}
 	public static void datatype2() {
 		//ASCII 7bit 0~127
-		//UNICODE 3¹®ÀÚ¼Â Ç¥½Ã
+		//UNICODE 3ë¬¸ìì…‹ í‘œì‹œ
 		//UTF-8 
 		//UTF-16
 	}
@@ -1176,17 +1374,17 @@ public class PrintEx {
 		a=123;
 		b=321.45f;
 		a = (int)b;//cast
-		System.out.printf("aÀÇ °ªÀº: %d \n", a);//---
-		System.out.printf("bÀÇ °ªÀº: %f \n", b);
+		System.out.printf("aì˜ ê°’ì€: %d \n", a);//---
+		System.out.printf("bì˜ ê°’ì€: %f \n", b);
 		
 	}
 	public static void print4() {
-		System.out.printf("\nÁÙ¹Ù²Ş\n¿¬½À\n");
+		System.out.printf("\nì¤„ë°”ê¿ˆ\nì—°ìŠµ\n");
 		
-		System.out.printf("\tÅÇ ³Ö±â\t¿¬½À\n");
-		System.out.printf("³Ö±â\r\rµ¤¾î¾¹´Ï´Ù\n");
-		System.out.printf("±ÛÀÚ°¡ \"°­Á¶\"µÇ´Â È¿°ú\n");
-		System.out.printf("\\\\\\\\ ¿ª½½·¡½Ã Ãâ·Â \n");
+		System.out.printf("\tíƒ­ ë„£ê¸°\tì—°ìŠµ\n");
+		System.out.printf("ë„£ê¸°\r\rë®ì–´ì”ë‹ˆë‹¤\n");
+		System.out.printf("ê¸€ìê°€ \"ê°•ì¡°\"ë˜ëŠ” íš¨ê³¼\n");
+		System.out.printf("\\\\\\\\ ì—­ìŠ¬ë˜ì‹œ ì¶œë ¥ \n");
 	}
 	public static void print3() {
 		System.out.printf("%d\n", 123);
@@ -1220,4 +1418,7 @@ public class PrintEx {
 		//System.out.printf("%s %s", a); //error
 		
 	}
+
+
+	 		
 }
