@@ -1,5 +1,6 @@
 package JavaEx;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -34,7 +35,589 @@ public class JavaPractice {
 //		myMathEx();
 //		arrayShipBoard();//Ex5-20, MultiArrEx1.java
 //		arrayBingo();//Ex5-21
-		arrayMatrix();//Ex5-22
+//		arrayMatrix();//Ex5-22
+		
+//		forwhile_ex();//배수의 합계 계산
+//		dowhile_ex();//입력된 문자열로부터 대문자,소문자,숫자 개수 계산
+//		array_ex();//배열 연습
+//		array_ex_basic();//배열 초기화에 대한 연습
+//		array_ex2();
+//		array_ex3();//2중 배열의 저장과 출력
+//		array_ex4();//배열의 행,열 개수를 입력받아서 생성하는 예제 연습
+//		array_ex5();//배열에 할당한 문자를 꺼내쓰는 연습
+//		array_ex5_menu();//쌓기, 빼기 기능선택 메뉴작성 연습
+//		array_ex6_sort_bubble();//버블정렬
+//		bubbleSort_ex();
+//		array_ex7();//3중 배열
+		array_ex8_random_lotto();//random() 사용
+	}
+
+
+
+	private static void array_ex8_random_lotto() {
+		int [] lotto = new int [6];
+		Arrays.fill(lotto, 0);
+		
+		System.out.println("**로또 추첨하기**");
+		int n;
+		int errCnt=0;
+		for(int i=0;i<6;i++) {
+			//번호추첨
+			n = getRandNumb();
+			//번호중복이면 재추첨
+			for(int j=0;j<6;j++) {
+				if(lotto[j]==n) {
+					errCnt++;
+					n = getRandNumb(lotto);
+				}else {
+					lotto[i]=n;
+				}
+			}
+			//중복되징 않은 번호만 배열에 입력
+		}
+		System.out.println("재추첨회수:"+ errCnt);
+		System.out.println("추첨된 로또 번호:");
+		for(int i=0;i<6;i++) {
+			System.out.printf("%3d",lotto[i]);
+		}
+		
+		
+	}
+
+	private static int getRandNumb() {
+		int n = (int) (Math.random()*45 + 1);
+		return n;
+	}
+
+	private static int getRandNumb(int[] lotto) {
+		int n = (int) (Math.random()*45 + 1);
+		
+		for(int j=0;j<6;j++) {
+			if(lotto[j]==n) {
+				n = getRandNumb(lotto);
+			}else {
+				continue;
+			}
+		}
+		
+		return n;
+	}
+
+
+	private static void array_ex7() {
+		int[][][] arr = new int[10][10][10];
+		int n=1;
+		System.out.printf("%dx%dx%d 배열의 값을 입력 \n", 10, 10, 10);
+		for(int i=0;i<10;i++) {
+			for(int j=0;j<10;j++) {
+				for(int k=0;k<10;k++) {
+					arr[i][j][k]=n++;
+				}
+			}
+		}
+		System.out.println("합계 계산, 출력");
+		int sum=0;
+		for(int i=0;i<10;i++) {
+			for(int j=0;j<10;j++) {
+				for(int k=0;k<10;k++) {
+					sum = sum + arr[i][j][k];
+				}
+			}
+		}
+		System.out.printf("%d 까지의 합계: %d", 10*10*10, sum );
+		
+		
+	}
+
+
+
+	private static void bubbleSort_ex() {
+		int[] arr = {1,4,3,2,5};
+		printArr(arr);
+		bubbleSort(arr);
+		printArr(arr);
+		
+	}
+
+	private static void bubbleSort(int[] arr) {
+		bubbleSort(arr, arr.length-1);
+	}
+
+	private static void bubbleSort(int[] arr, int last) {
+		if(last>0) {
+			for(int i=0;i<=last;i++) {
+				if(arr[i-1]>arr[i]) {
+					swap(arr, i-1, i);
+				}
+			}
+			bubbleSort(arr, last-1);
+		}
+	}
+
+	private static void printArr(int[] arr) {
+		for(int data:arr) {
+			System.out.printf("%3d", data);
+		}
+		System.out.println();
+	}
+
+	private static void swap(int[] arr, int i, int i2) {
+		int tmp=0;
+		tmp = arr[i];
+		arr[i] = arr[i2];
+		arr[i2]=tmp;
+	}
+
+
+
+	private static void array_ex6_sort_bubble() {
+		int[] data = {1,2,3,10,4,6,5,9,8,7};
+		System.out.println("정렬하기전 data:");
+		
+		for(int i=0;i<data.length;i++) {
+			System.out.printf("%3d", data[i]);
+		}
+		System.out.println();
+		System.out.println("정렬적용중...");
+		
+		int cnt=0;
+		for(int i=data.length;i>0;i--) {
+			for(int j=0;j<i-1; j++) {
+				cnt++;
+				//자리교환
+				if(data[j]>data[j+1]) {
+					int temp = data[j];
+					data[j] = data[j+1];
+					data[j+1] = temp;
+				}
+			}
+		}
+		System.out.println("정렬한후 data:");
+		
+		for(int i=0;i<data.length;i++) {
+			System.out.printf("%3d", data[i]);
+		}
+		System.out.println();
+		System.out.println("정렬 횟수 :"+cnt);
+	}
+
+
+
+	private static void array_ex5_menu() {
+		char[] stack = new char[5];
+		int top=0;
+		
+		int select;
+		Scanner scan = new Scanner(System.in);
+//		select = scan.nextInt();
+		//책이름입력: A,B,C,D,E
+		do {
+			select=array_ex5_menuitem();
+			
+			switch (select) {
+			case 1:
+				if (top >= 5) {
+					System.out.println("책쌓을 stack이 다 차서 공간이 없어요");
+				} else {
+					// 책 한권씩 쌓기
+					System.out.println("책이름을 입력해주세요(ex: A,B,C,D,E): ");
+					char book = scan.next().toUpperCase().charAt(0);
+
+					System.out.println("1)맨위에 한권씩 책쌓아올리기");
+					stack[top] = book;
+					System.out.printf("맨위에 쌓아올려놓은 책: %c \n", stack[top]);
+					top++;
+				}
+				break;
+			case 2:
+				// 책 한권씩 빼기
+				if (top <= 0) {
+					System.out.println("stack에서 빼낼 책이 없어요");
+				} else {
+					System.out.println("2) 위에서부터 책한권씩 빼내기");
+
+					top--;
+					System.out.printf("맨위에서 한권 빼낸 책: %c \n", stack[top]);
+					stack[top] = ' ';
+				}
+				break;
+			case 3:
+				// 보관된 책목록 출력
+				System.out.println("쌓여있는 책:");
+				for(int i=0;i<stack.length;i++) {
+					System.out.printf("stack[%d]=%3c \n"
+							,stack.length-1-i, stack[stack.length-1-i]);
+				}
+				break;
+			case 4:
+				// 선택메뉴출력
+				continue;
+			case 5:
+				// 종료
+				System.out.println("종료합니다");
+				break;
+			default:
+				//
+				System.out.println("선택번호를 확인해주세요.");
+				// 선택 menu 출력
+				array_ex5_menuitem();
+				break;
+
+			}
+		} while (select !=5);
+		
+	}
+
+
+
+	private static int array_ex5_menuitem() {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("stack 책장 메뉴입니다");
+		System.out.println("------------------");
+		System.out.println("메뉴 1) 책 한권씩 쌓기 ");
+		System.out.println("메뉴 2) 책 한권씩 빼기 ");
+		System.out.println("메뉴 3) 보관된 책목록 출력 ");
+		System.out.println("메뉴 4) 메뉴 ");
+		System.out.println("메뉴 5) 종료 ");
+		System.out.println("------------------");
+		System.out.println("메뉴를 선택하세요: ");
+		
+		int m = scan.nextInt();
+		return m;
+	}
+
+
+
+	private static void array_ex5() {
+		System.out.println("책쌓아올리기: 배열에 할당한 문자를 꺼내쓰는 연습");
+		
+		char[] stack = new char[5];
+		int top=0;
+		
+		System.out.println("1)맨위에 한권씩 책쌓아올리기");
+		stack[top]='A';
+		System.out.printf("맨위에 쌓아올려놓은 책: %c \n", stack[top]);
+		top++;
+		
+		stack[top]='B';
+		System.out.printf("맨위에 쌓아올려놓은 책: %c \n", stack[top]);
+		top++;
+		
+		stack[top]='C';
+		System.out.printf("맨위에 쌓아올려놓은 책: %c \n", stack[top]);
+		top++;
+		
+		stack[top]='D';
+		System.out.printf("맨위에 쌓아올려놓은 책: %c \n", stack[top]);
+		top++;
+		
+		System.out.println("쌓여있는 책:");
+		for(int i=0;i<stack.length;i++) {
+			System.out.printf("stack[%d]=%3c \n"
+					,stack.length-1-i, stack[stack.length-1-i]);
+		}
+		
+		System.out.println("2) 위에서부터 책한권씩 빼내기");
+		
+		top--;
+		System.out.printf("맨위에 쌓아올려놓은 책: %c \n", stack[top]);
+		stack[top]=' ';
+		
+		top--;
+		System.out.printf("맨위에 쌓아올려놓은 책: %c \n", stack[top]);
+		stack[top]=' ';
+		
+		System.out.println("쌓여있는 책:");
+		for(int i=0;i<stack.length;i++) {
+			System.out.printf("stack[%d]=%3c \n"
+					,stack.length-1-i, stack[stack.length-1-i]);
+		}
+		
+		
+	}
+
+
+
+	private static void array_ex4() {
+		System.out.println("배열의 행,열 개수를 입력받아서 생성하는 예제 연습");
+		Scanner scan = new Scanner(System.in);
+				
+		int row = 0, col = 0;
+		
+		System.out.println("행(row)의 개수: ");
+		row = scan.nextInt();
+		System.out.println("열(col)의 개수: ");
+		col = scan.nextInt();
+		
+		int[][] nn = new int[row][col];
+		int value = 1;
+		
+		for(int i=0;i<row;i++) {
+			for(int j=0;j<col;j++) {
+				nn[i][j] = value;
+				value++;
+			}
+		}
+		
+		System.out.printf("%dx%d행렬출력: \n", row, col);
+		
+		for(int i=0;i<row;i++) {
+			for(int j=0;j<col;j++) {
+				System.out.printf("%3d", nn[i][j]);
+			}
+			System.out.println();
+		}
+		
+		
+		scan.close();
+	}
+
+
+
+	private static void array_ex3() {
+		int[][] nn =  new int [3][4];
+		System.out.println("1) 배열입력, 출력");
+		nn[0][0]=1;nn[0][1]=2;nn[0][2]=3;nn[0][3]=4;//nn[0][4]=1;
+		nn[1][0]=5;nn[1][1]=6;nn[1][2]=7;nn[1][3]=8;//nn[1][4]=1;
+		nn[2][0]=9;nn[2][1]=10;nn[2][2]=11;nn[2][3]=12;//nn2[2][4]=1;
+		
+		System.out.println("3x4 배열 출력");
+		System.out.printf("%3d %3d %3d %3d \n", nn[0][0],nn[0][1],nn[0][2],nn[0][3]);
+		System.out.printf("%3d %3d %3d %3d \n", nn[1][0],nn[1][1],nn[1][2],nn[1][3]);
+		System.out.printf("%3d %3d %3d %3d \n", nn[2][0],nn[2][1],nn[2][2],nn[2][3]);
+		
+		System.out.println("2) 배열입력, 출력 for()구문으로 처리하기");
+		
+		int value = 1;
+		for(int  i=0;i<3;i++) {
+			for(int j=0;j<4;j++) {
+				nn[i][j] = value;
+				value++;
+			}
+		}
+		System.out.println("3x4 배열 출력");
+		
+		for(int  i=0;i<3;i++) {
+			for(int j=0;j<4;j++) {
+				System.out.printf("%3d ", nn[i][j]);
+			}
+			System.out.println();
+		}
+		
+		int[][] nn3 = {
+				{1,2,3,4},{5,6,7,8},{9,10,11,12}
+		};
+		
+		System.out.println("3) 배열선언할 때 입력을 설정, 값 초기화");
+		
+		System.out.println("3x4 배열 출력");
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<4;j++) {
+				System.out.printf("%3d ", nn3[i][j]);
+			}
+			System.out.println();
+		}
+		
+	}
+
+	private static void array_ex2() {
+		System.out.println("배열 인덱스 활용 연습 ");
+		int[] n1 = new int [10];
+		int n2 [] = new int[10];
+		
+		System.out.println("n1배열의 길이: "+ n1.length);
+		System.out.printf("n1배열 요소의 크기 : %d 바이트(byte) \n", n1.length * Integer.BYTES);
+		int i;
+		for(i=0;i<n1.length;i++) {
+			n1[i] = i*2;
+		}
+		
+		System.out.println("n2배열의 길이: "+ n2.length);
+		System.out.printf("n2배열 요소의 크기 : %d 바이트(byte) \n", n2.length * Integer.BYTES);
+		for(i=0;i<n2.length;i++) {
+			n2[i] = n1[9-i];
+		}
+		
+		for(i=0;i<n1.length;i++) {
+			System.out.printf("n1[%d]=%d, n2[%d]=%d \n", i, n1[i], i, n2[i]);
+		}
+	}
+
+	private static void array_ex_basic() {
+		System.out.println("배열 초기화에 대한 연습");
+		int nn1[] = {100, 200, 300, 400};
+		char cc1[] = {'a', 'b', 'c', 'd'};
+		
+		int nn2 [] = new int[] {100, 200, 300};
+		char cc2 [] = new char[] {'a', 'b', 'c'};
+		
+		int nn3[];
+		nn3 = new int[] {100, 200};
+		char cc3[];
+		cc3 = new char[] {'a','b'};
+		
+		int [] nn4 = new int[2];
+		nn4[0]=100;
+		nn4[1]=200;
+		//nn4[2]='/0'; -> 배열의 끝번지에는 종료문자가 들어가 있다
+		char [] cc4 = new char[2];
+		cc4[0]='a';
+		cc4[1]='b';
+		
+		System.out.println("숫자형출력");
+		int i=0;
+		for (i=0;i<nn1.length;i++) {
+			System.out.printf("nn1[%d]=%d  ", i, nn1[i]);
+		}
+		System.out.println();
+		for (i=0;i<nn2.length;i++) {
+			System.out.printf("nn2[%d]=%d  ", i, nn2[i]);
+		}
+		System.out.println();
+		for (i=0;i<nn3.length;i++) {
+			System.out.printf("nn3[%d]=%d  ", i, nn3[i]);
+		}
+		System.out.println();
+		for (i=0;i<nn4.length;i++) {
+			System.out.printf("nn4[%d]=%d  ", i, nn4[i]);
+		}
+		System.out.println();
+		
+		System.out.println("문자형출력");
+		for (i=0;i<cc1.length;i++) {
+			System.out.printf("cc1[%d]=%c  ", i, cc1[i]);
+		}
+		System.out.println();
+		for (i=0;i<cc2.length;i++) {
+			System.out.printf("cc2[%d]=%c  ", i, cc2[i]);
+		}
+		System.out.println();
+		for (i=0;i<cc3.length;i++) {
+			System.out.printf("cc3[%d]=%c  ", i, cc3[i]);
+		}
+		System.out.println();
+		for (i=0;i<cc4.length;i++) {
+			System.out.printf("cc4[%d]=%c  ", i, cc4[i]);
+		}
+		System.out.println();
+		
+	}
+
+	private static void array_ex() {
+		System.out.println("배열 연습 -  입력숫자를 배열 변수에서 처리");
+		
+		Scanner scan = new  Scanner(System.in);
+		
+		System.out.println("배열의 개수를 입력- 몇개의 숫자를 입력받을까요?");
+		int max=0;
+		max =scan.nextInt();
+		int [] nArr = new int[max];
+		for(int i=0;i<max;i++) {
+			System.out.printf("%d번째 숫자 입력: ", (i+1));
+			nArr[i]=scan.nextInt();
+			//System.out.println();
+		}
+		int sum=0;
+		for(int i=0;i<max;i++) {
+			sum += nArr[i];
+		}
+		
+		System.out.printf("sum = %d \n", sum);
+		scan.close();
+	}
+
+	private static void dowhile_ex() {
+		System.out.println("입력된 문자열로부터 대문자,소문자,숫자 개수 계산 ");
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("문자열을 입력해주세요: ");
+		String s = scan.nextLine();
+		System.out.println("입력문자열의 길이: " + s.length());
+		
+		int i = 0;
+		char ch;
+		int upper_cnt=0, lower_cnt=0, digit_cnt=0;
+		do {
+			ch = s.charAt(i);
+			if(ch>='A' && ch<='Z') {
+				//대문자 
+				upper_cnt++;
+			}
+			if(ch>='a' && ch<='z') {
+				//소문자 
+				lower_cnt++;
+			}
+			if(ch>='0' && ch<='9') {
+				//숫자 
+				digit_cnt++;
+			}
+			i++;
+		}while(i<s.length());
+		System.out.println("i:"+i);
+		System.out.printf("입력된 문자열로부터 대문자 %d,소문자 %d,숫자 %d 계수되었습니다 \n "
+				,upper_cnt,lower_cnt,digit_cnt );
+		
+		System.out.println("프로그램을 다시 수행하고 싶으면 9를 입력해주세요");
+	}
+
+	private static int[] while_ex_input(){
+		System.out.println("배수의 합계 계산 ");
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("시작하는 값을 입력: ");
+		int start = scan.nextInt();
+		System.out.println("종료하는 값을 입력: ");
+		int end = scan.nextInt();
+		System.out.println("배수 입력: ");
+		int m = scan.nextInt();
+		int [] param = new int[3];
+		param[0]=start;
+		param[1]=end;
+		param[2]=m;
+		
+//		scan.close();
+		return param; 
+	}
+	private static void forwhile_ex() {
+		System.out.println("시작~종료 숫자 범위에서 입력된 숫자의 배수들의 합을 계산");
+		int start, end;//시작, 종료
+		int m;//배수
+		
+		int [] param = new int[3];
+		
+		param = while_ex_input();
+		start= param[0];
+		end = param[1];
+		m = param[2];
+
+		System.out.printf("=> start:%d end:%d m:%d \n",  start, end, m);
+		
+		//1) while()
+		int i = start;
+		int sum=0;
+		while(i<=end) {
+			if(i%m==0) {  //배수
+				sum=sum+i;//합산
+			}
+			i++;
+		}
+		System.out.printf("(%d ~ %d) 범위 %d배수들의 합: %d \n", start, end, m, sum);
+		
+		Arrays.fill(param, 0);
+		param = while_ex_input();
+		start= param[0];
+		end = param[1];
+		m = param[2];
+		
+		sum=0;
+		for(i=0;i<=end;i++) {
+			if(i%m==0) {  //배수
+				sum=sum+i;//합산
+			}
+		}
+		System.out.printf("(%d ~ %d) 범위 %d배수들의 합: %d\n", start, end, m, sum);
 		
 	}
 

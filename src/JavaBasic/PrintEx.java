@@ -1,4 +1,14 @@
 package JavaBasic;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+//
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -34,15 +44,17 @@ public class PrintEx {
 		 //print1();//
 		 //print2();//
 		 //print3();//서식
+//		systemin_scan();//scan() 함수의 사용예
+		 
 
 		/*
 		 * \n \t \b 뒤로 한칸 이동 \r 줄의 맨 앞으로 이동 \\ '\'를 출력 \' '''를 출력 \"  '"'를 출력
 		 */
 		 //print4();//문장서식
 		
-		 variable1();//변수
-		 datatype1();//데이터형식
-		 datatype2();
+//		 variable1();//변수
+//		 datatype1();//데이터형식
+//		 datatype2();
 		// ascii();//ascii 출력
 		// bool();//boolean
 		// string();//String
@@ -71,7 +83,7 @@ public class PrintEx {
 //		System.out.println("dowhileEx의 종료 코드: " + ret);
 //		System.out.println("== main  ==");
 		
-		//control_basic();
+		control_basic();
 		
 		//array_1();
 		//calc();
@@ -90,18 +102,710 @@ public class PrintEx {
 		//method_ex1();//call by value
 		//method_ex2();//call by reference  --> get(), set()
 		//method_ex3_swap();
-		parameter_value();//값을 전달, reference by value
-		parameter_address();//주소 전달, reference by address
-		parameter_array();
+//		parameter_value();//값을 전달, reference by value
+//		parameter_address();//주소 전달, reference by address
+//		parameter_array();
 		//class_ex();//클래스 예 -자동차클래스
 		//class_TvTest();//클래스 예 -TV클래스
 
 		//callStack(); //static메소드의 호출과 stack메모리번지할당
 		
 		//classExtends();//클래스상속 예제
+		
+//		class_ex_DmbPhone();//클래스상속예제:폰특징, dmb특징
+//		class_ex_Student();//주민번호,학생번호
+//		class_ex_Computer();//오버라이딩(overriding) 계산기, 컴퓨터
+//		class_ex_Airplane();//오버라이딩(overriding) airplain
+//		class_ex_promotion();//parent, child access
+//		class_ex_polymorphism();//폴리모피즘 자동차바퀴 예제
+//		class_ex_carDriver();//폴리모피즘 자동차 드라이버
+//		class_ex_cast();//클래스 cast  child=(child)Parent
+//		class_ex_instanceof();
 		//interface_ex();//인터페이스 예제
 		
+//		trycatch_ex1();//try~catch연습 - ArrayIndexOutOfBoundsException
+//		trycatch_ex2();
+//		trycatch_throw();//try~catch throw를 사용하는 예제
+		
+//		scanner_ex();//단어 입력예제
+//		systemread_ex();//입력예제
+		
+//		fileStream_ex();//파일 입출력 예제
+//		fileStream_ex2();//FileInputStream, fis.read(), byte[1024] 사용해서 파일읽기
+		//fileStream_ex3();//FileReader, BufferedReader 사용해서 파일읽기
+//		fileStream_ex4();//Scanner(new File(FILE) 사용해서 파일읽기
+//		fileStream_ex5();//Scanner(new File(FILE) 사용해서 파일읽기
+//		fileStream_ex6();//파일쓰기 write, System.in.read() 입력사용
+//		fileStream_ex7();//파일쓰기 write, Scanner입력사용
+//		fileStream_ex8();//파일내용복사
+//		String [] param = new  String [3];
+//		for(int i=0;i<args.length;i++) {
+//			param[i]=args[i];
+//		}
+//		fileStream_ex9(args);//매개변수(파라미터)로 복사할 파일명을 입력받고 파일내용복사
 	}
+	private static void fileStream_ex9(String[] args) {
+		
+		try {
+			FileInputStream fis = new FileInputStream(args[0]);
+			FileOutputStream fos = new FileOutputStream(args[1]);
+			
+			int ch;
+			
+			try {
+				System.out.println("복사시작");
+				while((ch=fis.read())!=-1) {
+					fos.write((byte)ch);
+					System.out.print("#");
+				}
+				System.out.println("복사종료");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				try {
+					fos.close();
+					fis.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+	}
+	private static void fileStream_ex8() {
+		System.out.println("FileInputStream, FileOutputStream 파일복사(읽고,쓰기)");
+//		String FILEREAD = "c:\\temp\\data3.txt";
+		String FILEREAD = "c:\\Windows\\system.ini";
+		String FILEOUT = "c:\\temp\\data5.txt";
+		FileInputStream fis=null;
+		FileOutputStream fos = null;
+		try {
+			fis = new FileInputStream(FILEREAD);
+			fos = new FileOutputStream(FILEOUT);
+			int ch;
+			try {
+				System.out.println("복사시작");
+				while((ch = fis.read())!=-1){
+					System.out.print("#");
+					fos.write((byte)ch);
+				}
+				System.out.println();
+				System.out.println("복사완료");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				fos.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				fis.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	private static void fileStream_ex7() {
+		System.out.println("FileOutputStream, fw.write(), Scanner입력 사용해서 파일쓰기");
+		String FILE = "c:\\temp\\data4.txt";
+		Scanner scan = new Scanner(System.in);
+		FileWriter fw=null;
+		try {
+			fw = new FileWriter(FILE);
+			
+			String s;
+			
+			System.out.println("글자를 입력해주세요(파일에 저장됩니다):");
+			while(!(s=scan.nextLine()).equals("") ) {
+				fw.write(s + "\r\n");
+				
+			}
+			System.out.println("입력이 종료되었습니다");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				fw.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			scan.close();
+		}
+		
+	}
+	private static void fileStream_ex6() {
+		System.out.println("FileOutputStream, fos.write() 사용해서 파일쓰기");
+		String FILE = "c:\\temp\\data3.txt";
+		try {
+			FileOutputStream fos = new FileOutputStream(FILE);
+			
+			int ch;
+			try {
+				System.out.println("글자를 입력해주세요(파일에 저장됩니다):");
+				while((ch=System.in.read())!=13) {
+					fos.write((byte)ch);
+				}
+				System.out.println("입력이 종료되었습니다");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	private static void fileStream_ex5() {
+		System.out.println("Scanner(new File(FILE) 사용해서 파일읽기");
+		String FILE = "c:\\temp\\data2.txt";
+		
+		File f = new File(FILE);
+		Scanner scan = null;
+		int tot = 0;
+		try {
+			scan = new Scanner(f);
+			int n=0;
+			while(scan.hasNextLine()) {
+				n=scan.nextInt();
+				System.out.println("while: "+ n);
+//				tot +=scan.nextInt();
+				tot +=n;
+			}
+			System.out.println("tot: " + tot);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch(Exception e){
+			System.out.println(e.getMessage());
+		} finally {
+			
+			scan.close();
+		}
+	}
+	private static void fileStream_ex4() {
+		System.out.println("Scanner(new File(FILE) 사용해서 파일읽기");
+		String FILE = "c:\\temp\\data2.txt";
+		
+//		File f = new File(FILE);
+//		Scanner scan = null;
+		int tot = 0;
+		try {
+			Scanner scan = new Scanner(new File(FILE));
+			
+			while(scan.hasNextLine()) {
+				tot +=scan.nextInt();
+			}
+			
+			scan.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch(Exception e){
+			System.out.println(e.getMessage());
+		} finally {
+			System.out.println("tot: " + tot);
+		}
+	}
+	private static void fileStream_ex3() {
+		System.out.println("FileReader, BufferedReader 사용해서 파일읽기");
+		String FILE = "c:/temp/data1.txt";
+		FileReader fr=null;
+		BufferedReader br = null;
+		try {
+			fr = new FileReader(FILE);
+			br = new BufferedReader(fr);
+			
+			String s = null;
+			try {
+				while((s=br.readLine())!=null) {
+					System.out.println(s);
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				fr.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	private static void fileStream_ex2() {
+		System.out.println("FileInputStream, fis.read(), byte[1024] 사용해서 파일읽기");
+		String FILE = "c:/temp/data1.txt";
+		byte[] b = new byte[1024];
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream(FILE);
+			int ch;
+			
+			int i=0;
+			try {
+				while((ch=fis.read())!= -1) {
+					b[i] = (byte) ch;
+					i++;
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			String outs = new String(b);
+			System.out.print(outs);
+			try {
+				fis.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	private static void fileStream_ex() {
+		System.out.println("FileInputStream, fis.read() 사용해서 파일읽기");
+		try {
+			FileInputStream fis =new FileInputStream("c:/temp/data1.txt");
+			int ch;
+			
+			try {
+				while((ch=fis.read())!=-1) {
+					System.out.print((char)ch);;
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				try {
+					fis.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	} 
+	private static void systemread_ex() {
+		Scanner scan = new Scanner(System.in);
+		String userName = "";
+		String userPassword = "";
+		System.out.println("1) 사용자 이름과 패스워드를 저장합니다. 다음을 입력하세요.");
+		System.out.println("* 사용자이름: ");
+		userName = scan.nextLine();
+		System.out.println("* 사용자패스워드: ");
+		userPassword = scan.next();
+		
+		String uname="";
+		String upass="";
+		int key;
+		System.out.println("2) 저장되어 있는 사용자이름, 패스워드를 비교합니다");
+		try {
+			System.out.print("이름을 입력하세요: ");
+			while((key = System.in.read()) !=13) { //13은 ascii Enter키에 해당합니다 /r/n
+				uname +=Character.toString((char)key);
+			}
+			if(userName.equals(uname)) {
+				System.out.println(uname+"고객님 입장");
+				System.out.println(uname+"패스워드를 입력해주세요");
+				key=0;
+				
+				System.in.read(new byte[System.in.available()]);
+								
+				while((key = System.in.read()) !=13) { //13은 ascii Enter키에 해당합니다
+					upass +=Character.toString((char)key);
+				}
+				if(userPassword.equals(upass)) {
+					System.out.println(uname+"고객님 로그인하였습니다");
+					
+				}else {
+					System.out.println(uname+"고객님 패스워드를 확인해서 로그인하십시요");
+					
+				}
+				
+			}else {
+				System.out.println(uname+"등록되어있지 않은 고객이십니다");
+			}
+		} catch(IOException e) {
+			System.out.println("IO Exceptopm 발생");
+			e.printStackTrace();//프로그램 실행 순서대로 역추적을 해주는 로그 
+			
+		}
+		
+		
+	}
+	private static void scanner_ex() {
+		Scanner scan = new Scanner(System.in);
+		
+		String s1, s2, s3;
+		
+		System.out.println("단어 3개 입력하세요(단어는 공백문자로 구분): ");
+		s1 = scan.next();
+		s2 = scan.next();
+		s3 = scan.next();
+		
+		System.out.println("입력된 문자열:");
+		
+		System.out.printf("s1: [%s] \n", s1);
+		System.out.printf("s2: [%s] \n", s2);
+		System.out.printf("s3: [%s] \n", s3);
+		
+		scan.close();
+	}
+	private static void systemin_scan() {
+		Scanner scan = new Scanner(System.in);
+		byte b;
+		short sh;
+		int i;
+		long l;
+		float f;
+		double d;
+		String s1, s2;
+		
+		System.out.println("Scanner 입력 예제");
+		System.out.print("byte :");
+		b = scan.nextByte();
+		System.out.printf("byte :[%d]\n", b);
+		System.out.print("short :");
+		sh = scan.nextShort();
+		System.out.printf("short :[%d]\n", sh);
+		System.out.print("int :");
+		i = scan.nextInt();
+		System.out.printf("int :[%d]\n", i);
+		System.out.print("long :");
+		l = scan.nextLong();
+		System.out.printf("long :[%d]\n", l);
+		System.out.print("float :");
+		f = scan.nextFloat();
+		System.out.printf("float :[%f]\n", f);
+		System.out.print("double :");
+		d = scan.nextDouble();
+		System.out.printf("double :[%f]\n", d);
+		System.out.print("String :");
+		s1 = scan.next();//단어단위, 공백 입력 전까지 
+		System.out.printf("String next:[%s]\n", s1);
+		System.out.print("String nextLine:");
+		s2 = scan.nextLine();//줄단위입력, /n/r 리턴입력전까지
+		System.out.printf("String :[%s]\n", s2);
+		
+		scan.close();
+	}
+	private static void trycatch_throw() {
+		int a =100, b=0;
+		int res;
+		int errCode=999;
+		String errMsg = "";
+		try {
+			if(b==0) {
+				errCode = 100;
+				errMsg = "0으로 나누려고 합니다.";
+				throw new Exception ("오류["+errCode+"]"+errMsg);
+			}
+			res = a/b;
+				
+		}catch(Exception e) {
+			System.out.println("Exception 오류발생:");
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	private static void trycatch_ex2() {
+		int [] nArr = new int[3];
+		
+		nArr[0] = 1;
+		nArr[1] = 2;
+		
+		System.out.println("배열값출력");
+		for(int i=0;i<3;i++) {
+			System.out.printf("=> nArr[%d]: %d \n", i, nArr[i]);
+		}
+		
+		System.out.println("배열값 변경시 오류 메시지 trycatch실행");
+		try {
+			nArr[3] = 1000000;
+			nArr[2] = 100/0;
+			
+			
+			System.out.println("배열값출력");
+			for(int i=0;i<3;i++) {
+				System.out.printf("=> nArr[%d]: %d \n", i, nArr[i]);
+			}
+			
+		} catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Exception: 배열크기오류 ArrayIndexOutOfBoundsException");
+			System.out.println(e.getMessage());
+			e.getStackTrace();
+		} catch(ArithmeticException e) {
+			System.out.println("Exception: 0으로나누기오류 ArithmeticException");
+			System.out.println(e.getMessage());
+			e.getStackTrace();
+		} finally {
+			System.out.println("finally 출력되는 구문");
+		}
+		
+		
+	}
+	private static void trycatch_ex1() {
+		int [] nArr = new int[3];
+		try {
+			nArr[3] = 10000000;
+			System.out.println("=> nArr: "+ nArr);
+			
+		}catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("배열첨자가 바운더리 오류");
+		} catch(Exception e) {
+			
+			System.out.println(e.getMessage());
+		}
+	}
+	private static void class_ex_instanceof() {
+		System.out.println("1) new Child");
+		Parent parent1 = new Child();
+		method1(parent1);
+		method2(parent1);
+		System.out.println("2) new Parent()");
+		Parent parent2 = new Parent();
+		method1(parent2);
+		//method2(parent2);
+		System.out.println("3) new Parent()");
+		Child child1 = new Child();
+		method3(child1);
+		System.out.println("4) new Parent()"); //오류발생
+		Child child2 = (Child) new Parent();//오류발생
+		method3(child2);
+	}
+	
+	private static void method3(Child c) {
+		if(c instanceof Parent) {
+			Parent parent = (Parent) c;
+			System.out.println("method3() Child-> Parent변환 성공");
+		}else {
+			System.out.println("method3() Child-> Parent변환 실패");
+		}
+	}
+	private static void method2(Parent p) {
+		try {
+			Child child = (Child) p;
+			System.out.println("method2() Parent->Child 변환 성공");
+		}catch(Exception e) {
+			e.getMessage();
+			System.out.println(e);
+			e.getStackTrace();
+		}
+	}
+	private static void method1(Parent p) {
+		if(p instanceof Child) {
+			Child child = (Child) p;
+			System.out.println("method1() Parent-> Child변환 성공");
+		}else {
+			System.out.println("method1() Parent-> Child변환 실패");
+		}
+	}
+	private static void class_ex_cast() {
+		Parent parent = new Child();
+		parent.field_parent = "data1";
+		parent.method1();
+		parent.method2();
+		
+//		parent.field_child = "data2";
+//		parent.method3();
+		
+		Child child = (Child) parent;
+		child.field_child="data3";
+		child.method3();
+	}
+	private static void class_ex_carDriver() {
+		Driver driver = new Driver();
+		Bus bus = new Bus();
+		Taxi taxi = new Taxi();
+		
+		driver.drive(bus);
+		driver.drive(taxi);
+		
+	}
+	private static void class_ex_polymorphism() {
+		Car car = new Car();
+//		
+//		for(int i=1;i<=10;i++) {
+//			int check = car.run();
+//
+//			switch(check) {
+//			case 1:
+//				System.out.println("앞-왼쪽 타이어교체");
+//				car.frontLeftTire = new HankookTire("앞-왼쪽", 15);
+//				break;
+//			case 2:
+//				System.out.println("앞-오른쪽 타이어교체");
+//				car.frontRightTire = new HankookTire("앞-오른쪽", 15);
+//				break;
+//			case 3:
+//				System.out.println("뒤-왼쪽 타이어교체");
+//				car.backLeftTire = new HankookTire("뒤-왼쪽", 15);
+//				break;
+//			case 4:
+//				System.out.println("앞-오른쪽 타이어교체");
+//				car.backRightTire = new HankookTire("앞-오른쪽", 15);
+//				break;
+//			}
+//			System.out.println("---------------------");
+//		}
+//		
+		
+		for(int i=1;i<=10;i++) {
+			int check = car.run2();
+
+			if(check !=0) {
+				System.out.println(car.tires[check-1].location + "HankookTire으로 교체");
+				
+				car.tires[check-1] = 
+						new HankookTire(car.tires[check-1].location, 15);
+				
+			}
+			System.out.println("---------------------");
+		}
+		
+		
+	}
+	private static void class_ex_promotion() {
+		Child child = new Child();
+		Parent parent = child;
+		parent.method1();
+		parent.method2();
+//		parent.method3();
+		child.method3();
+	}
+	private static void class_ex_Airplane() {
+		SupersonicAirplane sa = new SupersonicAirplane();
+		System.out.println("보통비행기");
+		//--보통비행기
+		sa.flyMode=SupersonicAirplane.NORMAL;
+		//비행기 이륙
+		sa.takeoff();
+		//비행기 비행
+		sa.fly();
+		//비행기 착륙
+		sa.land();
+		
+		System.out.println("초음속비행기");
+		//--초음속비행기
+		sa.flyMode=SupersonicAirplane.SUPERSONIC;
+		//비행기 이륙
+		sa.takeoff();
+		//비행기 비행
+		sa.fly();
+		//비행기 착륙
+		sa.land();
+	}
+	private static void class_ex_Computer() {
+		//원면적계산
+		int r = 10;
+		
+		Calculator calc = new Calculator();
+		
+		System.out.println("원면적: " + calc.areaCircle(r));
+		System.out.println();
+
+		ComputerCalc comp = new ComputerCalc();
+		
+		System.out.println("원면적: " + comp.areaCircle(r));
+		
+		
+	}
+	private static void class_ex_Student() {
+		//사람이름, 주민번호 //-->주민
+		//학생번호 //->학생
+		String name="";
+		String ssn="";
+		int studentCode=1;
+		//입력
+		Scanner scan = new Scanner(System.in);
+		System.out.println("이름을 입력하세요: ");
+		name = scan.nextLine();
+		System.out.println();
+		System.out.println("주민번호를 입력하세요: ");
+		ssn = scan.nextLine();
+		System.out.println();
+		System.out.println("학생번호를 입력하세요: ");
+		studentCode = scan.nextInt();
+		//생성자 초기화
+		Student std = new Student(name, ssn, studentCode);
+		
+		//출력
+		System.out.println("이름: " + std.name);
+		System.out.println("주민번호: " + std.ssn);
+		System.out.println("학생번호: " + std.studentNo);
+		
+	}
+	private static void class_ex_DmbPhone() {
+		
+		//기기의 초기값
+		String model="LG G2";
+		String color="WHITE"; 
+		int ch=11;
+		int vol=10;
+		
+		DmbCellPhone dmbcp = new DmbCellPhone(model, color, ch, vol);
+		
+		System.out.println("1) 초기값");
+		System.out.println("모델:" + dmbcp.model);
+		System.out.println("색상:" + dmbcp.color);
+		System.out.println("채널:" + dmbcp.ch);
+		System.out.println("볼륨:" + dmbcp.getVol());
+		
+		//폰을 동작...
+		System.out.println("2) 기본 폰의 동작");
+		dmbcp.powerOn();
+		dmbcp.bell();
+		dmbcp.sendVoice("Hello~Hello~");
+		dmbcp.receiveVoice("안녕하세요 잘계시지요?");
+		dmbcp.hangUp();
+		//dmb동작
+		System.out.println("3) dmb 동작");
+		dmbcp.turnOnDmb();
+		dmbcp.changeChDmb(9);
+		dmbcp.setVol(20);
+	}
+	
 	static void parameter_value() {
 		System.out.println("parameter_value()");
 		//기본형 데이터 타입 : int, char, float, double, boolean, byte
@@ -1389,17 +2093,32 @@ public class PrintEx {
 		System.out.printf("\\\\\\\\ 역슬래시 출력 \n"); //  \\
 	}
 	public static void print3() {
-		System.out.printf("%d\n", 123);
-		System.out.printf("%5d\n", 123);
-		System.out.printf("%05d\n", 123);
+		System.out.printf("[%d]\n", 123);
+		System.out.printf("[%5d]\n", 123);
+		System.out.printf("[%05d]\n", 123);
 		
 		
-		System.out.printf("%f\n", 123.45);
-		System.out.printf("%7.1f\n", 123.45);
-		System.out.printf("%7.3f\n", 123.45);
+		System.out.printf("[%f]\n", 123.45);
+		System.out.printf("[%7.1f]\n", 123.45);
+		System.out.printf("[%7.3f]\n", 123.45);
 		
-		System.out.printf("%s\n", "string123");
-		System.out.printf("%10s\n", "string123");
+		System.out.printf("[%s]\n", "string123");
+		System.out.printf("[%10s]\n", "string123");
+		
+		int i = 1234;
+		float f = 1234.123456f;
+		char c = 'c';
+		String s = "string s";
+		System.out.printf("정수의 10진수  d:[%d] \n", i);
+		System.out.printf("정수의 16진수  x:[%X], \n", i);
+		System.out.printf("정수의 8진수 o: [%o]  \n", i);
+		System.out.printf("실수 자리수 표시 10.3f: [%10.3f] \n", f);
+		System.out.printf("실수(공학) 표시  e: [%e],\n", f);
+		System.out.printf("문자 표시  c: [%c]  \n", c);
+		System.out.printf("문자열 표시  s: [%s]  \n", s);
+		
+		
+		
 	}
 
 	public static void print2() {
